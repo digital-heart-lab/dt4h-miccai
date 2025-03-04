@@ -381,3 +381,12 @@ footer {
   content: "";
   z-index: -1;
 }
+
+.foot-copyright {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  z-index: 2;
+  position: relative;
+  margin: 8px;
+  font-size: 0.75em;
+}
