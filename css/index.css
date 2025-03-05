@@ -103,6 +103,12 @@ header {
   margin-bottom: 20px;
 }
 
+@media screen and (max-width: 1200px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
 .copyright {
   position: relative;
   text-align: center;
@@ -331,8 +337,12 @@ footer {
 }
 
 .sponsor {
-  display: block;
+  display: flex;
+  flex-direction: column;
   margin: 20px 30px;
+  color: #fff;
+  text-decoration: none;
+  align-items: center;
 }
 
 .sponsor-logo {
@@ -350,7 +360,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-self: center;
-  margin-left: -210px;
+  padding: 0 20px;
 }
 
 .timeline-item {
@@ -365,7 +375,8 @@ footer {
   justify-content: flex-end;
   font-size: 1.5em;
   font-weight: bold;
-  width: 200px;
+  flex: 0 0 140px;
+  width: 140px;
   position: relative;
   padding-right: 10px;
   margin-right: 10px;
