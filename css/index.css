@@ -81,6 +81,7 @@ header {
 }
 
 .hero::after {
+  display: var(--filter-visible);
   position: absolute;
   inset: 0;
   content: "";
