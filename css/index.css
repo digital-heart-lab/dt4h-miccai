@@ -116,6 +116,10 @@ header {
 }
 
 a {
+  color: inherit;
+}
+
+a[class] {
   text-decoration: none;
   color: inherit;
 }
