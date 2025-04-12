@@ -332,11 +332,18 @@ footer {
   margin: 20px 30px;
   color: #fff;
   text-decoration: none;
+  justify-content: center;
   align-items: center;
 }
 
 .sponsor-logo {
   height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.sponsor-logo img {
+  max-height: 100%;
   object-fit: contain;
 }
 
@@ -438,6 +445,7 @@ footer {
 .swiper {
   position: relative;
   flex: 1;
+  width: 100%;
 }
 
 .swiper__body {
@@ -602,7 +610,13 @@ footer {
 }
 
 .section-inner.program {
-  max-width: 1200px;
+  max-width: 1600px;
+}
+
+@media screen and (min-width: 1200px) {
+  .section-inner.program {
+    padding: 0 180px;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -625,5 +639,17 @@ footer {
   }
   .keynote {
     flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer-item-title {
+    font-size: 3em;
+    margin: 1em 0;
+    text-align: center;
+  }
+
+  .sponsors {
+    flex-direction: column;
   }
 }
