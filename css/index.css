@@ -325,26 +325,31 @@ footer {
   display: flex;
   flex-wrap: wrap;
   font-family: sans-serif;
+  gap: 30px;
 }
 
 .sponsor {
   display: flex;
   flex-direction: column;
-  margin: 20px 30px;
+  margin: 20px 0;
   color: #fff;
   text-decoration: none;
   justify-content: center;
   align-items: center;
+  width: 180px;
 }
 
 .sponsor-logo {
-  height: 60px;
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
+  height: 70px;
 }
 
 .sponsor-logo img {
   max-height: 100%;
+  max-width: 100%;
   object-fit: contain;
 }
 
@@ -454,7 +459,6 @@ footer {
   display: flex;
   flex-wrap: nowrap;
   width: 100%;
-  overflow: hidden;
 }
 
 .swiper-item {
@@ -465,7 +469,6 @@ footer {
   transition: transform 300ms ease-in;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   border-radius: 8px;
   background-color: #555;
 }
@@ -475,6 +478,7 @@ footer {
   text-align: center;
   font-size: 1.25em;
   margin: 1em 0;
+  text-transform: uppercase;
 }
 .swiper-item:nth-child(odd) {
   background-color: #333;
@@ -653,4 +657,9 @@ footer {
   .sponsors {
     flex-direction: column;
   }
+}
+
+.text--muted {
+  font-size: 1rem;
+  color: #aaa;
 }
