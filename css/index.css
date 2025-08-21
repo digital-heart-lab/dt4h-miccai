@@ -663,3 +663,100 @@ footer {
   font-size: 1rem;
   color: #aaa;
 }
+
+.agenda {
+  display: grid;
+  row-gap: 1px;
+  grid-template-columns: 60px 1fr;
+  grid-template-rows: repeat(28, 1.5rem);
+  margin-bottom: 80px;
+}
+
+.agenda-time {
+  transform: translateY(50%);
+  align-self: center;
+  height: 1.5rem;
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  padding-right: 4px;
+  color: #ddd;
+}
+
+.agenda-time--ticket {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+.agenda-event {
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.agenda-event--1,
+.agenda-event--10,
+.agenda-event--5 {
+  background-color: rgba(28, 255, 221, 0.032);
+}
+
+.agenda-event--2,
+.agenda-event--4,
+.agenda-event--8 {
+  background-color: rgba(19, 98, 255, 0.097);
+}
+
+.agenda-event--3,
+.agenda-event--7 {
+  background-color: rgba(187, 15, 255, 0.113);
+}
+
+.agenda-event--6 {
+  background-color: #ec902e18;
+}
+
+.agenda-event--9 {
+  background-color: #c2880014;
+}
+
+.agenda-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  gap: 10px;
+}
+
+.paper {
+  margin: 10px 0;
+  position: relative;
+  padding-left: 10px;
+}
+
+.paper::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  width: 2px;
+  bottom: 4px;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.paper-title {
+  font-weight: bold;
+}
+
+.paper-authors {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.oral-session {
+  max-width: var(--inner-width);
+  margin: 30px auto;
+}
+
+.oral-sesseion__title {
+  font-size: 1.25rem;
+}
