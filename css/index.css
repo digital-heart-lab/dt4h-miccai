@@ -696,28 +696,27 @@ footer {
 }
 
 .agenda-event--1,
+.agenda-event--6,
+.agenda-event--9,
 .agenda-event--10,
 .agenda-event--5 {
-  background-color: rgba(28, 255, 221, 0.032);
+  background-color: rgb(28 255 221 / 1%);
 }
 
 .agenda-event--2,
 .agenda-event--4,
 .agenda-event--8 {
-  background-color: rgba(19, 98, 255, 0.097);
+  background-color: rgb(34 108 255 / 5%);
 }
 
 .agenda-event--3,
 .agenda-event--7 {
-  background-color: rgba(187, 15, 255, 0.113);
+  background-color: rgb(255 255 255 / 2%);
 }
 
-.agenda-event--6 {
-  background-color: #ec902e18;
-}
-
+.agenda-event--6,
 .agenda-event--9 {
-  background-color: #c2880014;
+  background-color: #e1831f08;
 }
 
 .agenda-item {
