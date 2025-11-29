@@ -23,9 +23,16 @@ jobs:
         with:
           node-version: 22
 
-      # 安装依赖
+      # 3. 安装 pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10 # 指定 pnpm 版本
+          run_install: false # 我们手动运行安装
+
+      # 4. 安装依赖
       - name: Install dependencies
-        run: npm install
+        run: pnpm install --frozen-lockfile
 
       # 构建项目
       - name: Build project
