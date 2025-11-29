@@ -5,6 +5,9 @@ on:
     branches:
       - dev # 监听 main 分支，可按需修改
 
+permissions:
+  contents: write # ⭐ 强制启用写权限（最关键）
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
