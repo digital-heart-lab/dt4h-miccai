@@ -23,7 +23,7 @@ const countries = [
   "Australia",
   "Unspecified",
 ];
-const counts = [8, 6, 6, 5, 4, 3, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2];
+const counts = [9, 9, 7, 6, 5, 5, 2, 2, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1];
 
 const countryParticipants = countries
   .map((c, i) => ({
