@@ -1,0 +1,14 @@
+{
+  "platinum": [
+    {
+      "name": "inHeart",
+      "logo": "/images/sponsors/inHeart.svg",
+      "url": "https://www.inheartmedical.com/"
+    },
+    {
+      "name": "SIG-Cardiac",
+      "logo": "/images/sponsors/SIG-Cardiac.png",
+      "url": "https://miccai.org/index.php/special-interest-groups/sig-cardiac/"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+---
+author: Lei Li
+date: 2026-03-01
+---
+
+We invite original research contributions on digital twins for healthcare. Papers should be a maximum of 8 pages (including text, figures, and tables) with up to 2 additional pages for references. Submissions must follow the Springer LNCS format (Latex or MS Word templates) and undergo double-blind peer review. The workshop will be held in person only, and authors of accepted papers are required to present their work in person.
+
+All submissions will be reviewed by external experts and the organizing committee for oral or poster presentation. Accepted papers will be published with Springer LNCS, and the best papers will be recognized with industry-sponsored awards. We encourage both theoretical and applied research, including proof-of-concept studies that explore novel directions in digital twins. As MICCAI expands its global reach, we especially welcome submissions that address challenges in digital twins for low- and middle-income countries. This workshop will also feature live demonstrations, allowing authors to showcase their digital twin applications in AI-driven modeling, real-time simulations, and clinical decision support.
+
+Submissions should be made via CMT system, with email registration required before submission. If you experience any issues, please contact the Program Chairs via the submission platform or email. We invite contributions on topics such as:
+
+* Development of digital twins using medical imaging data.
+* Integrating imaging and non-imaging data for dynamic digital twins.
+* Computational modeling of specific diseases (e.g., cardiovascular, neurology, oncology, pulmonology oncology, etc).
+* AI techniques for digital twin efficiency and accuracy.
+* Validation and deployment challenges for digital twins in clinical practice.
+* CMT ACKNOWLEDGMENT: The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.

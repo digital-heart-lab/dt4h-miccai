@@ -1,0 +1,25 @@
+{
+  "year": 2025,
+  "location": "Daejeon, Republic of Korea",
+  "date": [
+    "2025",
+    "September",
+    "23"
+  ],
+  "status": "completed",
+  "submissions": 23,
+  "accepted": 15,
+  "participants": 70,
+  "countries": 17,
+  "keynoteSpeakers": [
+    "Prof. Linwei Wang",
+    "Prof. Mathias Unberath",
+    "Prof. Henggui Zhang"
+  ],
+  "bestPapers": [
+    "Personalized 3D Myocardial Infarct Geometry Reconstruction",
+    "A Real-Time Digital Twin for Type 1 Diabetes",
+    "Retrospective Evaluation of a Patient-Specific Liver Digital Twin"
+  ],
+  "proceedingsLink": "https://link.springer.com/book/10.1007/978-3-032-07694-6"
+}

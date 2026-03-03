@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Prof. Linwei Wang",
+    "affil": "Rochester Institute of Technology",
+    "topic": "Learning for Digital Twins: From Uncertainty to Trust"
+  },
+  {
+    "name": "Prof. Mathias Unberath",
+    "affil": "Johns Hopkins University",
+    "topic": "Digital Twins in Surgical Robotics"
+  },
+  {
+    "name": "Prof. Henggui Zhang",
+    "affil": "Beijing Academy of AI",
+    "topic": "Virtual Heart: From Simulation to Clinical Translation"
+  }
+]

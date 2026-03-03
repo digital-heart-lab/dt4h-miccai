@@ -1,0 +1,38 @@
+[
+  {
+    "time": "08: 30",
+    "event": "Opening + Welcome"
+  },
+  {
+    "time": "09: 00",
+    "event": "Keynote 1: Prof. Linwei Wang"
+  },
+  {
+    "time": "09: 45",
+    "event": "Oral Session 1"
+  },
+  {
+    "time": "10: 45",
+    "event": "Coffee + Posters"
+  },
+  {
+    "time": "11: 30",
+    "event": "Keynote 2: Prof. Mathias Unberath"
+  },
+  {
+    "time": "12: 15",
+    "event": "Lunch"
+  },
+  {
+    "time": "13: 30",
+    "event": "Oral Session 2"
+  },
+  {
+    "time": "14: 30",
+    "event": "Panel + Awards"
+  },
+  {
+    "time": "15: 15",
+    "event": "Closing"
+  }
+]
