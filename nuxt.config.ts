@@ -14,20 +14,13 @@ export default defineNuxtConfig({
       activeYear: 0, //  config active year in enviornment variable.
     },
   },
-
-  nitro: {
-    preset: "cloudflare_module",
-    cloudflare: {
-      deployConfig: true,
-      wrangler: {
-        d1_databases: [
-          {
-            binding: "DB",
-            database_name: "dt4h",
-            database_id: "b78f8226-fec1-422e-8108-16183be35790",
-          },
-        ],
-      },
+  content: {
+    database: {
+      type: "d1",
+      bindingName: "DB",
     },
+  },
+  nitro: {
+    preset: "cloudflare_pages",
   },
 });
