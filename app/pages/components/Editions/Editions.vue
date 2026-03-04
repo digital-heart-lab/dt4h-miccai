@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { BookOpen, Calendar, ExternalLink, FileText, Globe, MapPin, Play } from 'lucide-vue-next';
-import type { Workshop } from '~/models/workshop';
 import StatusBar from '../StatusBar.vue';
 
-const { data: workshops } = await useFetch<Workshop[]>(`/api/workshops`)
+const workshops = await getWorkshops()
 const viewDetail = (year: number) => {
   navigateTo(`/workshops/${year}`)
 }

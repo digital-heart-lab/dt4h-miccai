@@ -1,15 +1,13 @@
 <script setup lang="ts">
-import { ArrowRight, History } from 'lucide-vue-next';
 import CommitteeMember from './CommitteeMember.vue';
-import type { Committee } from '~/models/workshop';
+import type { Committee } from "~~/shared/schemas/workshop"
 const props = withDefaults(defineProps<{
   title?: string
   data?: Committee
 }>(), {
   title: 'Committee'
 })
-const { data: committee } = await useFetch<Committee[]>(`/api/comittee/standing`)
-const standingCommittee = computed(() => committee.value!.find(c => c.type === 'standing')!)
+const standingCommittee = (await queryCollection('committee').where('type', '=', 'standing').first())!
 
 </script>
 
@@ -23,13 +21,13 @@ const standingCommittee = computed(() => committee.value!.find(c => c.type === '
         </h2>
       </div>
       <div v-if="data" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children mb-10">
-        <CommitteeMember v-for="member in data.member" :member="member" />
+        <CommitteeMember v-for="member in data.members" :member="member" />
       </div>
 
       <template v-else>
         <h3 class="mb-4 ml-1">Standing Member</h3>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children mb-10">
-          <CommitteeMember v-for="member in standingCommittee.member" :member="member" />
+          <CommitteeMember v-for="member in standingCommittee.members" :member="member" />
         </div>
       </template>
     </div>

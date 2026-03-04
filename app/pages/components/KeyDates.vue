@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { Calendar } from 'lucide-vue-next';
-import type { CalendarDate } from '~/models/workshop';
+import type { Event } from "~~/shared/schemas/workshop"
 
 defineProps<{
-  dates: CalendarDate[]
+  dates: Event[]
 }>()
 
 </script>
@@ -42,7 +42,7 @@ defineProps<{
                 <div class="w-3 h-3 rounded-full bg-[#1E6EF1] mx-auto mb-4 relative z-10 animate-pulse"></div>
                 <div class="font-mono-label text-[#1E6EF1] mb-2">{{ item.month }}</div>
                 <div class="font-['Space_Grotesk'] font-bold text-xl text-[#F4F6FB] mb-1">
-                  {{ item.date }}
+                  {{ item.day }}
                 </div>
                 <div class="text-xs text-[#A6ACB8]">{{ item.event }}</div>
               </div>

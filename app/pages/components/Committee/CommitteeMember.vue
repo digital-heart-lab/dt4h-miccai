@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import type { Staff } from '~/models/person';
+import type { CommitteeMember } from '~~/shared/schemas/workshop';
+
 
 defineProps<{
-  member: Staff
+  member: CommitteeMember
 }>()
 </script>
 

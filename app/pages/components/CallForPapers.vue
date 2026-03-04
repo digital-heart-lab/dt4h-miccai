@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ArrowRight, BookOpen, CheckCircle, Download, ExternalLink } from 'lucide-vue-next';
-import type { PaperTemplate } from '~/models/workshop';
 
+import { type PaperTemplate } from "~~/shared/schemas/workshop"
 defineProps<{
   paperTempaltes: PaperTemplate[]
   cmtLink: string

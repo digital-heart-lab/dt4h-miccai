@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import heroBg from "~/assets/images/hero.jpg"
 import { History, FileText, ArrowRight, Award, Calendar, MapPin, ChevronRight, Construction } from "lucide-vue-next";
-import type { Workshop } from "~/models/workshop";
+import type { Workshop } from "~~/shared/schemas/workshop";
 const config = useRuntimeConfig()
 const activeYear = computed(() => config.public.activeYear)
 
 const { data } = await useAsyncData(() => Promise.all([
-  $fetch(`/api/workshops/${activeYear.value}`),
-  $fetch(`/api/workshops/${activeYear.value - 1}`),
+  getWorkshopDetail(activeYear.value),
+  getWorkshopDetail(activeYear.value - 1)
 ]))
 
 const activeEdition = computed<Workshop>(() => data.value![0]!)

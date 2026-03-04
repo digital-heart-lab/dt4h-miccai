@@ -22,7 +22,7 @@ definePageMeta({
 })
 
 const { data: articles } = await useAsyncData('blog-list', () => {
-  return queryCollection('content').where('path', 'LIKE', '/blog/%').all()
+  return queryCollection('blog').where('path', 'LIKE', '/blog/%').all()
 })
 </script>
 

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type { Sponsor } from '~/models/workshop';
+import type { Sponsor } from '~~/shared/schemas/person';
+
 
 defineProps<{
   sponsor: Sponsor

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { Sponsors } from '~/models/workshop';
-import Sponsor from './Sponsor.vue';
+import type { SponsorList } from '~~/shared/schemas/workshop';
+
 
 
 defineProps<{
-  sponsors: Sponsors
+  sponsors: SponsorList
 }>()
 </script>
 

@@ -1,0 +1,30 @@
+{
+  "year": 2026,
+  "events": [
+    {
+      "event": "Paper Deadline",
+      "day": "20",
+      "month": "June"
+    },
+    {
+      "event": "Reviews Due",
+      "day": "15",
+      "month": "July"
+    },
+    {
+      "event": "Notification",
+      "day": "20",
+      "month": "July"
+    },
+    {
+      "event": "Camera Ready",
+      "day": "1",
+      "month": "August"
+    },
+    {
+      "event": "Workshop",
+      "day": "5/7",
+      "month": "October"
+    }
+  ]
+}

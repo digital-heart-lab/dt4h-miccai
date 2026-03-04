@@ -1,0 +1,15 @@
+{
+  "year": 2026,
+  "templates": [
+    {
+      "label": "LaTex Template",
+      "format": "latex",
+      "link": "https://conferences.miccai.org/2025/files/downloads/MICCAI2025-LaTeX-Template.zip"
+    },
+    {
+      "label": "Word Template",
+      "format": "word",
+      "link": "https://conferences.miccai.org/2025/files/downloads/MICCAI2025-Word-Template.zip"
+    }
+  ]
+}

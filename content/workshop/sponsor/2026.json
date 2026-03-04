@@ -1,4 +1,5 @@
 {
+  "year": 2026,
   "platinum": [
     {
       "name": "inHeart",
@@ -10,5 +11,7 @@
       "logo": "/images/sponsors/SIG-Cardiac.png",
       "url": "https://miccai.org/index.php/special-interest-groups/sig-cardiac/"
     }
-  ]
+  ],
+  "gold": [],
+  "supporting": []
 }

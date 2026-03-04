@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { Award, BarChart3, BookOpen, Calendar, CalendarDays, CheckCircle, ChevronRight, Clock, ExternalLink, FileText, Globe, Hammer, MapPin, Rocket, Users } from 'lucide-vue-next'
-import type { Workshop } from '~/models/workshop'
 import Navigation from '../../components/Navigation.vue'
 import KeyDates from '../../components/KeyDates.vue'
 import Committee from '../../components/Committee/Index.vue'
@@ -19,18 +18,22 @@ const year = Number(route.params.year)
 
 
 if (isNaN(year) || year > 2026 || year < 2025) {
-  throw createError({
-    status: 404,
-    statusText: 'Page Not Found',
-  })
+
 }
 if (year === 2025) {
   location.href = '/workshops/2025'
 }
 
-const { data } = await useFetch<Workshop>(`/api/workshops/${year}`)
+const { data } = await useAsyncData(route.path, async () => {
+  return getWorkshopDetail(year)
+})
 
-useAnimation()
+if (!data.value) {
+  throw createError({
+    status: 404,
+    statusText: 'Page Not Found',
+  })
+}
 
 const navs = [{
   label: 'Papers',
@@ -51,8 +54,10 @@ const navs = [{
   label: 'Home',
   url: '/'
 }]
-</script>
+useAnimation()
 
+
+</script>
 <template>
   <Navigation :year="year" :navs="navs" />
   <div class="min-h-screen bg-[#0B0C0F] pt-24 pb-16 px-[8vw]">
@@ -111,10 +116,10 @@ const navs = [{
           Keynote Speakers
         </h3>
         <div class="space-y-4">
-          <div v-if="!data?.keynotes?.length">
+          <div v-if="!data?.keynotes?.keynotes">
             TBA
           </div>
-          <div v-for="keynote in data?.keynotes" class="p-4 rounded-xl bg-[rgba(244,246,251,0.03)]">
+          <div v-for="keynote in data?.keynotes?.keynotes" class="p-4 rounded-xl bg-[rgba(244,246,251,0.03)]">
             <div class="font-medium text-[#F4F6FB]">{{ keynote.name }}</div>
             <div class="text-sm text-[#A6ACB8]">{{ keynote.affil }}</div>
             <div class="text-sm text-[#1E6EF1] mt-2">{{ keynote.topic }}</div>
@@ -165,7 +170,7 @@ const navs = [{
           Program Schedule
         </h3>
         <div class="grid md:grid-cols-2 gap-4">
-          <div v-for="item in data.schedule" key={i}
+          <div v-for="item in data?.timeline?.events" key={i}
             class="flex items-center gap-4 p-3 rounded-xl bg-[rgba(244,246,251,0.03)]">
             <div class="font-mono-label text-[#1E6EF1] w-16">{{ item.time }}</div>
             <div class="text-[#F4F6FB]">{{ item.event }}</div>
@@ -174,10 +179,10 @@ const navs = [{
       </div>
     </div>
   </div>
-  <CallForPapers :paper-tempaltes="data!.paperTemplates" :cmt-link="data!.cmtLink"
-    :paper-requirement-link="data!.paperRequirementLink" />
-  <KeyDates :dates="data!.calendar" />
-  <Committee :data="data!.committee" />
-  <Sponsors :sponsors="data!.sponsors" />
+  <CallForPapers v-if="data?.paperTemplates?.templates" :paper-tempaltes="data.paperTemplates.templates"
+    :cmt-link="data!.cmtLink" :paper-requirement-link="data!.paperRequirementLink" />
+  <KeyDates v-if="data?.timeline?.events" :dates="data.timeline.events" />
+  <Committee v-if="data?.committee" :data="data!.committee" />
+  <Sponsors v-if="data?.sponsors" :sponsors="data!.sponsors" />
   <Foot />
 </template>
