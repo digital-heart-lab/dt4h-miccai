@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { SponsorList } from '~~/shared/schemas/workshop';
+import Sponsor from './Sponsor.vue';
 
 
 

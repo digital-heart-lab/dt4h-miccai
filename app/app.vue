@@ -2,6 +2,7 @@
 </script>
 <template>
   <NuxtLayout>
+    <NuxtLoadingIndicator color="#ccc" />
     <NuxtPage />
   </NuxtLayout>
 </template>
