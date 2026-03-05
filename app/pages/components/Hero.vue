@@ -11,12 +11,15 @@ const { data } = await useAsyncData(() => Promise.all([
 ]))
 
 const activeEdition = computed<Workshop>(() => data.value![0]!)
-const prevEdition = computed<Workshop>(() => data.value![1]!)
+const prevEdition = computed<Workshop | undefined>(() => data.value?.[1])
 
 const onViewArchive = () => {
+  setTimeout(() => {
+    document.getElementById('archive')?.scrollIntoView({ behavior: "smooth" });
+  }, 100);
 }
 const viewPrevEditon = () => {
-  navigateTo("/workshops/2025/#recap")
+  navigateTo(`/workshops/${activeYear.value - 1}/#recap`)
 }
 const viewActive = () => {
   navigateTo(`/workshops/${activeYear.value}/`)
@@ -36,7 +39,8 @@ const viewActive = () => {
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div class="animate-slide-up">
           <div
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E6EF1]/20 border border-[#1E6EF1]/30 mb-6">
+            class="cursor-pointer inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E6EF1]/20 border border-[#1E6EF1]/30 mb-6"
+            @click="viewActive">
             <span class="w-2 h-2 rounded-full bg-[#1E6EF1] animate-pulse"></span>
             <span v-if="activeEdition.status === 'upcoming'" class="text-sm text-[#1E6EF1] font-medium">DT4H {{
               activeYear }} — Coming Soon</span>
@@ -141,7 +145,7 @@ const viewActive = () => {
             <div class="w-10 h-10 rounded-full bg-[#10B981]/20 flex items-center justify-center">
               <Award class="text-[#10B981]" :size="20" />
             </div>
-            <div class="flex-1">
+            <div v-if="prevEdition" class="flex-1">
               <div class="text-sm font-medium text-[#F4F6FB]">DT4H {{ activeYear - 1 }} Successfully Concluded</div>
               <div class="text-xs text-[#A6ACB8]">{{ prevEdition.participants }} participants from {{
                 prevEdition.countries }} countries</div>

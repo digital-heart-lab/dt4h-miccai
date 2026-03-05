@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      activeYear: 0, //  config active year in enviornment variable.
+      activeYear: 2026,
     },
   },
   content: {

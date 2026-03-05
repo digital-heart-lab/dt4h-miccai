@@ -2,7 +2,7 @@
 import { BookOpen, Calendar, ExternalLink, FileText, Globe, MapPin, Play } from 'lucide-vue-next';
 import StatusBar from '../StatusBar.vue';
 
-const workshops = await getWorkshops()
+const { data: workshops } = await useAsyncData(() => getWorkshops())
 const viewDetail = (year: number) => {
   navigateTo(`/workshops/${year}`)
 }

@@ -1,4 +1,7 @@
 export function formatDate(date: [string, string?, string?]) {
+  if (!Array.isArray(date)) {
+    return "";
+  }
   const items = date.filter((i) => i);
   switch (items.length) {
     case 1:

@@ -7,7 +7,9 @@ const props = withDefaults(defineProps<{
 }>(), {
   title: 'Committee'
 })
-const standingCommittee = (await queryCollection('committee').where('type', '=', 'standing').first())!
+const { data: standingCommittee } = await useAsyncData(() =>
+  queryCollection('committee').where('type', '=', 'standing').first()
+)
 
 </script>
 
@@ -24,8 +26,7 @@ const standingCommittee = (await queryCollection('committee').where('type', '=',
         <CommitteeMember v-for="member in data.members" :member="member" />
       </div>
 
-      <template v-else>
-        <h3 class="mb-4 ml-1">Standing Member</h3>
+      <template v-else-if="standingCommittee">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children mb-10">
           <CommitteeMember v-for="member in standingCommittee.members" :member="member" />
         </div>
