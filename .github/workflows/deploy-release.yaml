@@ -11,6 +11,7 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment: dt4h
 
     steps:
       # 拉取仓库代码
@@ -42,6 +43,5 @@ jobs:
       - name: Deploy to cloudflare pages
         env:
           TEST: "TEST"
-          # CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN}}
-          CLOUDFLARE_API_TOKEN: ${{ vars.CLOUDFLARE_API_TOKEN}}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN}}
         run: pnpx wrangler pages deploy dist/
