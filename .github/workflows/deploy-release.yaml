@@ -40,4 +40,6 @@ jobs:
 
       # 发布到 page 分支
       - name: Deploy to cloudflare pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN}}
         run: pnpx wrangler pages deploy dist/
