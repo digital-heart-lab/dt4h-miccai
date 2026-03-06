@@ -1,11 +1,11 @@
 <script lang="ts">
 export const blogNavs = [
   {
-    label: 'Workshop 2026',
+    label: 'DT4H 2026',
     url: '/workshops/2026'
   },
   {
-    label: 'Workshop 2025',
+    label: 'DT4H 2025',
     url: '/workshops/2025'
   },
   {
