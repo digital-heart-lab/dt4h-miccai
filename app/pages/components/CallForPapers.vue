@@ -33,7 +33,7 @@ const topics = [
 
     <div class="max-w-7xl mx-auto relative z-10">
       <h2 class="font-['Space_Grotesk'] text-[clamp(2rem,4vw,3rem)] font-semibold text-[#0B0C0F] mb-6">
-        call for Papers
+        Call for Papers
       </h2>
       <div class="grid lg:grid-cols-2 gap-16 items-start">
         <div class="reveal-left">

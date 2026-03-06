@@ -114,7 +114,7 @@ useAnimation()
         <div class="card-dark p-8">
           <h3 class="font-['Space_Grotesk'] text-xl font-semibold text-[#F4F6FB] mb-6 flex items-center gap-3">
             <Award class="text-[#1E6EF1]" :size="24" />
-            Call for sponsors
+            Call for Sponsors
           </h3>
           <div class="space-y-4">
             <div v-if="!data.keynotes?.keynotes">
