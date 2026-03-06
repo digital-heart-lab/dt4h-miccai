@@ -28,11 +28,11 @@ const { data: articles } = await useAsyncData('blog-list', () => {
 
 <template>
   <div class="min-h-[100vh] flex flex-col">
-    <Navigation name="DT4H BLOG" logo-url="/blog" :navs="blogNavs" />
+    <Navigation name="DT4H ANNOUNCEMENT" logo-url="/blog" :navs="blogNavs" />
     <div class="bg-[#0B0C0F] pt-24 pb-16 px-[8vw]">
       <div class="max-w-7xl mx-auto">
         <h1 class="font-['Space_Grotesk'] text-[clamp(3rem,8vw,6rem)] font-bold text-[#F4F6FB] leading-none">
-          BLOG
+          ANNOUNCEMENT
         </h1>
       </div>
     </div>

@@ -66,7 +66,7 @@ function scrollTo(id: string) {
   <nav :class="`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
     ? 'bg-[#0B0C0F]/90 backdrop-blur-md border-b border-[rgba(244,246,251,0.08)]' : 'bg-transparent'}`">
     <div class="w-full px-[4vw] py-4 flex items-center justify-between">
-      <div class="flex items-center w-[200px] cursor-pointer" @click="goHome">
+      <div class="flex items-center cursor-pointer" @click="goHome">
         <div class="h-[30px] w-[30px] bg-no-repeat bg-center bg-contain" :style="{
           'background-image': `url('${logo}')`
         }"></div>
@@ -82,16 +82,22 @@ function scrollTo(id: string) {
         </button>
       </div>
 
-      <button @click="toggleMobileMenu" class="md:hidden relative z-[60] w-[32px] h-[32px] flex flex-col justify-center items-center">
-        <span :class="`block w-6 h-[2px] bg-white transition-all duration-300 origin-center ${mobileMenuOpen ? 'rotate-45 translate-y-[6px]' : ''}`"></span>
-        <span :class="`block w-6 h-[2px] bg-white my-[4px] transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`"></span>
-        <span :class="`block w-6 h-[2px] bg-white transition-all duration-300 origin-center ${mobileMenuOpen ? '-rotate-45 -translate-y-[6px]' : ''}`"></span>
+      <button @click="toggleMobileMenu"
+        class="md:hidden relative z-[60] w-[32px] h-[32px] flex flex-col justify-center items-center">
+        <span
+          :class="`block w-6 h-[2px] bg-white transition-all duration-300 origin-center ${mobileMenuOpen ? 'rotate-45 translate-y-[6px]' : ''}`"></span>
+        <span
+          :class="`block w-6 h-[2px] bg-white my-[4px] transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`"></span>
+        <span
+          :class="`block w-6 h-[2px] bg-white transition-all duration-300 origin-center ${mobileMenuOpen ? '-rotate-45 -translate-y-[6px]' : ''}`"></span>
       </button>
     </div>
 
-    <div :class="`fixed inset-0 top-[62px] z-40 md:hidden transition-all duration-300 ${mobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'}`">
+    <div
+      :class="`fixed inset-0 top-[62px] z-40 md:hidden transition-all duration-300 ${mobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'}`">
       <div class="absolute inset-0 bg-[#0B0C0F]/95 backdrop-blur-lg" @click="closeMobileMenu"></div>
-      <div :class="`absolute top-0 left-0 right-0 bg-[#0B0C0F] border-b border-[rgba(244,246,251,0.08)] transform transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`">
+      <div
+        :class="`absolute top-0 left-0 right-0 bg-[#0B0C0F] border-b border-[rgba(244,246,251,0.08)] transform transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`">
         <div class="px-[4vw] py-6 flex flex-col gap-4">
           <button v-for="item in navs" @click="navTo(item)"
             class="text-center text-lg text-[#A6ACB8] hover:text-[#F4F6FB] transition-colors py-2">

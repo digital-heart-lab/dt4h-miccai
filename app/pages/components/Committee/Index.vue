@@ -5,7 +5,7 @@ const props = withDefaults(defineProps<{
   title?: string
   data?: Committee
 }>(), {
-  title: 'Committee'
+  title: 'Organizer'
 })
 const { data: standingCommittee } = await useAsyncData(() =>
   queryCollection('committee').where('type', '=', 'standing').first()

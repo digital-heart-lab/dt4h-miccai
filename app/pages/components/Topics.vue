@@ -19,7 +19,7 @@ const topics = [
       <div class="reveal mb-16">
         <div class="font-mono-label text-[#1E6EF1] mb-4">Research Scope</div>
         <h2 class="font-['Space_Grotesk'] text-[clamp(2rem,4vw,3rem)] font-semibold text-[#0B0C0F]">
-          Announcements Topics
+          Topics
         </h2>
       </div>
 

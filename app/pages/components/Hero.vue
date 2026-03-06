@@ -55,7 +55,7 @@ const viewActive = () => {
             Digital Twin<br />for Healthcare
           </h1>
           <p class="text-xl text-[#A6ACB8] mb-4">
-            MICCAI {{ activeYear }} Workshop — {{ activeEdition.year }}
+            MICCAI {{ activeYear }} Workshop
           </p>
           <p class="text-[#6B7280] mb-8 max-w-lg">
             An international workshop dedicated to advancing digital twin technology in healthcare, where researchers,

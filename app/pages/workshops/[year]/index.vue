@@ -67,14 +67,14 @@ useAnimation()
           <div class="font-mono-label text-[#1E6EF1]">Workshop Edition</div>
           <StatusBar :status="data.status" />
         </div>
-        <h1 class="font-['Space_Grotesk'] text-[clamp(3rem,8vw,6rem)] font-bold text-[#F4F6FB] leading-none">
-          DT4H {{ year }}
-        </h1>
         <h2 class="text-[clamp(1.5rem,1vw,2rem)] text-[#A6ACB8]">
+          DT4H {{ year }}
+        </h2>
+        <h1 class="font-['Space_Grotesk'] text-[clamp(3rem,8vw,6rem)] font-bold text-[#F4F6FB] leading-none">
           &copy; International Workshop on Digital Twin for Healthcare (DT4H) in <a class="underline"
             :href="data.miccaiLink" target="_blank">MICCAI {{
               year }}</a>
-        </h2>
+        </h1>
         <div class="flex flex-wrap items-center gap-6 text-[#A6ACB8] mt-6">
           <div class="flex items-center gap-2">
             <MapPin :size="18" /> {{ data.location }}
@@ -114,7 +114,7 @@ useAnimation()
         <div class="card-dark p-8">
           <h3 class="font-['Space_Grotesk'] text-xl font-semibold text-[#F4F6FB] mb-6 flex items-center gap-3">
             <Award class="text-[#1E6EF1]" :size="24" />
-            call for sponsors
+            Call for sponsors
           </h3>
           <div class="space-y-4">
             <div v-if="!data.keynotes?.keynotes">
