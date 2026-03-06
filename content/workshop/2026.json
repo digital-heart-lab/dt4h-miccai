@@ -3,9 +3,15 @@
   "location": "Abu Dhabi, United Arab Emirates",
   "date": [
     "2026",
-    "October"
+    "October",
+    "3th or 9th"
   ],
   "status": "ongoing",
+  "submissionDeadline": [
+    "2026",
+    "June",
+    "20th"
+  ],
   "miccaiLink": "https://conferences.miccai.org/2026/en/default.asp",
   "cmtLink": "https://cmt3.research.microsoft.com/DTforH2026",
   "paperRequirementLink": "/blog/call-for-papers-2026"

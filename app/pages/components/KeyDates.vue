@@ -23,7 +23,7 @@ defineProps<{
       <div class="grid lg:grid-cols-3 gap-12 items-center">
         <div class="reveal-left">
           <p class="text-[#A6ACB8] mb-6">
-            Plan ahead. Submissions are reviewed in a single cycle with tight turnaround.
+            Plan ahead
           </p>
           <button class="btn-secondary flex items-center gap-2 text-sm">
             <Calendar :size="16" /> Add to Calendar

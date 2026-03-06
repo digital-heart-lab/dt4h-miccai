@@ -9,6 +9,6 @@ export function formatDate(date: [string, string?, string?]) {
     case 2:
       return `${date[1]} ${date[0]}`;
     default:
-      return `${date[1]} ${date[0]}, ${date[2]}`;
+      return `${date[1]} ${date[2]}, ${date[0]}`;
   }
 }

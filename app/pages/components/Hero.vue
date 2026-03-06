@@ -58,8 +58,8 @@ const viewActive = () => {
             MICCAI {{ activeYear }} Workshop — {{ activeEdition.year }}
           </p>
           <p class="text-[#6B7280] mb-8 max-w-lg">
-            An international workshop dedicated to advancing digital twin technology in healthcare.
-            Join researchers, clinicians, and industry experts.
+            An international workshop dedicated to advancing digital twin technology in healthcare, where researchers,
+            clinicians, and industry experts converge to shape the future of personalized medicine.
           </p>
 
           <div class="flex flex-wrap gap-4 mb-8">
@@ -105,8 +105,8 @@ const viewActive = () => {
               <div class="flex items-start gap-4">
                 <FileText class="text-[#1E6EF1] mt-1" :size="20" />
                 <div>
-                  <div class="font-medium text-[#F4F6FB]">Springer LNCS</div>
-                  <div class="text-sm text-[#A6ACB8]">Proceedings publication</div>
+                  <div class="font-medium text-[#F4F6FB]">Paper Submission Deadline</div>
+                  <div class="text-sm text-[#A6ACB8]">{{ formatDate(activeEdition.submissionDeadline) }}</div>
                 </div>
               </div>
             </div>

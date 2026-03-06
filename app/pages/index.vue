@@ -10,5 +10,4 @@ import Committee from "./components/Committee/Index.vue";
   <Hero />
   <Topics />
   <Edition />
-  <Committee />
 </template>

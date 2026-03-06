@@ -19,5 +19,7 @@ export async function getWorkshopDetail(year: number): Promise<Workshop> {
 }
 
 export function getWorkshops(): Promise<Workshop[]> {
-  return queryCollection("workshop").all() as Promise<Workshop[]>;
+  return queryCollection("workshop").order("year", "DESC").all() as Promise<
+    Workshop[]
+  >;
 }

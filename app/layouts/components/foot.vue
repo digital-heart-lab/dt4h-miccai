@@ -4,7 +4,6 @@
       © 2026 DT4H Workshop. All rights reserved.
     </div>
     <div class="text-xs text-[#4B5563]">
-      Part of MICCAI — Medical Image Computing and Computer Assisted Intervention
     </div>
   </div>
 </template>

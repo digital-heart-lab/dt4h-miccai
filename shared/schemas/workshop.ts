@@ -59,6 +59,11 @@ export const WorkshopSchema = z.object({
   date: z.tuple([z.string(), z.string().optional(), z.string().optional()]),
   status: z.enum(["completed", "upcoming", "ongoing"]),
 
+  submissionDeadline: z.tuple([
+    z.string(),
+    z.string().optional(),
+    z.string().optional(),
+  ]),
   miccaiLink: z.string(),
   cmtLink: z.string(),
   paperRequirementLink: z.string(),

@@ -84,8 +84,8 @@ const viewDetail = (year: number) => {
 
               <div class="lg:col-span-2">
                 <p class="text-[#A6ACB8] text-sm">
-                  Join us for the second edition of DT4H at MICCAI 2026 in Marrakech, Morocco.
-                  We look forward to another year of groundbreaking research and collaboration.
+                  Join us for the 2th DT4H at MICCAI 2026 in Abu Dhabi, United Arab Emirates. We look forward to another
+                  year of groundbreaking research and collaboration.
                 </p>
               </div>
 
