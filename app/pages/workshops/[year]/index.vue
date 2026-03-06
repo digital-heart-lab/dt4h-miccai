@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Award, BarChart3, BookOpen, Calendar, CalendarDays, CheckCircle, ChevronRight, Clock, ExternalLink, FileText, Globe, Hammer, MapPin, Rocket, Users } from 'lucide-vue-next'
+import { ArrowRight, Award, BarChart3, BookOpen, Calendar, CalendarDays, CheckCircle, ChevronRight, Clock, DiamondPlus, ExternalLink, FileText, Gem, Globe, Hammer, Mail, MapPin, Rocket, Users } from 'lucide-vue-next'
 import Navigation from '../../components/Navigation.vue'
 import KeyDates from '../../components/KeyDates.vue'
 import Committee from '../../components/Committee/Index.vue'
@@ -62,19 +62,18 @@ useAnimation()
   <template v-if="data">
     <Navigation :year="year" :navs="navs" />
     <div class="min-h-screen bg-[#0B0C0F] pt-24 pb-16 px-[8vw]">
-      <div class="max-w-7xl mx-auto mb-16">
+      <div class="max-w-7xl mx-auto mb-8">
         <div class="flex items-center gap-4 mb-6">
-          <div class="font-mono-label text-[#1E6EF1]">Workshop Edition</div>
           <StatusBar :status="data.status" />
         </div>
-        <h2 class="text-[clamp(1.5rem,1vw,2rem)] text-[#A6ACB8]">
-          DT4H {{ year }}
-        </h2>
         <h1 class="font-['Space_Grotesk'] text-[clamp(3rem,8vw,6rem)] font-bold text-[#F4F6FB] leading-none">
+          Digital Twin for Healthcare {{ year }}
+        </h1>
+        <h2 class="text-[clamp(1.5rem,1vw,2rem)] text-[#A6ACB8]">
           &copy; International Workshop on Digital Twin for Healthcare (DT4H) in <a class="underline"
             :href="data.miccaiLink" target="_blank">MICCAI {{
               year }}</a>
-        </h1>
+        </h2>
         <div class="flex flex-wrap items-center gap-6 text-[#A6ACB8] mt-6">
           <div class="flex items-center gap-2">
             <MapPin :size="18" /> {{ data.location }}
@@ -113,23 +112,6 @@ useAnimation()
       <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8">
         <div class="card-dark p-8">
           <h3 class="font-['Space_Grotesk'] text-xl font-semibold text-[#F4F6FB] mb-6 flex items-center gap-3">
-            <Award class="text-[#1E6EF1]" :size="24" />
-            Call for Sponsors
-          </h3>
-          <div class="space-y-4">
-            <div v-if="!data.keynotes?.keynotes">
-              TBA
-            </div>
-            <div v-for="keynote in data.keynotes?.keynotes" class="p-4 rounded-xl bg-[rgba(244,246,251,0.03)]">
-              <div class="font-medium text-[#F4F6FB]">{{ keynote.name }}</div>
-              <div class="text-sm text-[#A6ACB8]">{{ keynote.affil }}</div>
-              <div class="text-sm text-[#1E6EF1] mt-2">{{ keynote.topic }}</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-dark p-8">
-          <h3 class="font-['Space_Grotesk'] text-xl font-semibold text-[#F4F6FB] mb-6 flex items-center gap-3">
             <BookOpen class="text-[#1E6EF1]" :size="24" />
             {{ data.status === 'completed' ? 'Best Papers' : 'Call for Papers' }}
           </h3>
@@ -147,9 +129,12 @@ useAnimation()
           <div v-else class="space - y - 4">
             <p class="text-[#A6ACB8]">
               We invite 8-page submissions on digital twin technology in healthcare.
-              Topics include organ modeling, AI-driven simulation, clinical translation, and more.
+              <a class="text-[#1E6EF1] inline-flex items-center gap-1" :href="data.paperRequirementLink"
+                target="__blank">Learn More
+                <ArrowRight :size="16" />
+              </a>
             </p>
-            <div class="space-y-2">
+            <div class="space-y-2 mt-3">
               <div v-for="item in ['Max 8 pages + 2 references', 'Springer LNCS format', 'Double-blind review']" key={i}
                 class="flex items-center gap-2 text-sm text-[#F4F6FB]">
                 <CheckCircle class="text-[#10B981]" :size="14" />
@@ -160,6 +145,31 @@ useAnimation()
               class="btn-primary w-full flex items-center justify-center gap-2 mt-6">
               <FileText :size="16" /> Submit Paper
             </a>
+          </div>
+        </div>
+
+        <div class="card-dark p-8">
+          <h3 class="font-['Space_Grotesk'] text-xl font-semibold text-[#F4F6FB] mb-6 flex items-center gap-3">
+            <Gem class="text-[#1E6EF1]" :size="24" />
+            Call for Sponsors
+          </h3>
+          <div class="space-y-4">
+            <template v-if="!data.keynotes?.keynotes">
+              <p class="text-[#A6ACB8]">
+                Support the future of precision healthcare by sponsoring our workshop exploring cutting-edge digital
+                twin
+                technology for patient simulation and clinical decision support.
+                <a href="mailto:lei.li@nus.edu.sg?subject=Sponsorship%20Interest:%20DT4H%202026" target="_blank"
+                  rel="noopener noreferrer" class="btn-secondary w-full flex items-center justify-center gap-2 mt-6">
+                  <Mail :size="16" /> Contact Us
+                </a>
+              </p>
+            </template>
+            <div v-for="keynote in data.keynotes?.keynotes" class="p-4 rounded-xl bg-[rgba(244,246,251,0.03)]">
+              <div class="font-medium text-[#F4F6FB]">{{ keynote.name }}</div>
+              <div class="text-sm text-[#A6ACB8]">{{ keynote.affil }}</div>
+              <div class="text-sm text-[#1E6EF1] mt-2">{{ keynote.topic }}</div>
+            </div>
           </div>
         </div>
       </div>

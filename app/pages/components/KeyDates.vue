@@ -17,17 +17,12 @@ defineProps<{
     </div>
 
     <div class="max-w-7xl mx-auto relative z-10">
-      <h2 class="font-['Space_Grotesk'] text-[clamp(2rem,4vw,3rem)] font-semibold text-[#F4F6FB] mb-4">
-        Key Dates
-      </h2>
+
       <div class="grid lg:grid-cols-3 gap-12 items-center">
         <div class="reveal-left">
-          <p class="text-[#A6ACB8] mb-6">
-            Plan ahead
-          </p>
-          <button class="btn-secondary flex items-center gap-2 text-sm">
-            <Calendar :size="16" /> Add to Calendar
-          </button>
+          <h2 class="font-['Space_Grotesk'] text-[clamp(2rem,4vw,3rem)] font-semibold text-[#F4F6FB] mb-4">
+            Key Dates
+          </h2>
         </div>
 
         <div class="lg:col-span-2">
@@ -40,7 +35,7 @@ defineProps<{
               <div v-for="(item, i) in dates" class="reveal-scale text-center"
                 :style="{ transitionDelay: `${i * 0.1}s` }">
                 <div class="w-3 h-3 rounded-full bg-[#1E6EF1] mx-auto mb-4 relative z-10 animate-pulse"></div>
-                <div class="font-mono-label text-[#1E6EF1] mb-2">{{ item.month }}</div>
+                <div class="font-mono-label text-lg text-[#1E6EF1] mb-2">{{ item.month }}</div>
                 <div class="font-['Space_Grotesk'] font-bold text-xl text-[#F4F6FB] mb-1">
                   {{ item.day }}
                 </div>

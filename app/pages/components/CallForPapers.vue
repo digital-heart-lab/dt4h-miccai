@@ -45,8 +45,8 @@ const topics = [
             Topics
           </h3>
           <div class="space-y-4 mb-4">
-            <div v-for="item in topics" class="flex items-center gap-3">
-              <CheckCircle class="text-[#1E6EF1] shrink-0" :size="20" />
+            <div v-for="item in topics" class="flex items-start gap-3">
+              <CheckCircle class="text-[#1E6EF1] shrink-0 relative top-[2px]" :size="20" />
               <span class="text-[#0B0C0F]">{{ item }}</span>
             </div>
           </div>

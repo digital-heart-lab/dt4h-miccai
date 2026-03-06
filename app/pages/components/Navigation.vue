@@ -71,7 +71,7 @@ function scrollTo(id: string) {
           'background-image': `url('${logo}')`
         }"></div>
         <span class="font-[Space_Grotesk] text-white font-semibold text-xl ml-2">
-          {{ name || `D4TH ${year || ''}` }}
+          {{ name || `DT4H ${year || ''}` }}
         </span>
       </div>
 
