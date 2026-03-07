@@ -2,8 +2,8 @@
 import { Heart, Activity, Brain, CheckCircle, Shield, Microscope, Cloud, FlaskConical, Watch } from 'lucide-vue-next';
 const topics = [
   { icon: Heart, title: 'Organ & Tissue Modeling', desc: 'Patient-specific geometry and biophysics.' },
-  { icon: Activity, title: 'Multi-modal Integration', desc: 'Imaging, signals, genomics, sensors.' },
-  { icon: Brain, title: 'AI-driven Simulation', desc: 'Predictive models and surrogate learning.' },
+  { icon: Activity, title: 'Multi-Modal Integration', desc: 'Imaging, signals, genomics, sensors.' },
+  { icon: Brain, title: 'AI-Driven Simulation', desc: 'Predictive models and surrogate learning.' },
   { icon: CheckCircle, title: 'Clinical Translation', desc: 'Validation, safety, and deployment.' },
   { icon: Shield, title: 'Trustworthy AI', desc: 'Fairness, privacy, and explainability.' },
   { icon: Microscope, title: 'Surgical & Intervention Planning', desc: 'Digital twin-guided therapy.' },
