@@ -14,11 +14,18 @@ const { data: standingCommittee } = await useAsyncData(() =>
 </script>
 
 <template>
-  <section id="committee" class="section-dark py-24 px-[8vw]">
-    <div class="max-w-7xl mx-auto">
-      <div class="reveal mb-8">
-        <div class="font-mono-label text-[#1E6EF1] mb-4">Organization</div>
-        <h2 class="font-['Space_Grotesk'] text-[clamp(2rem,4vw,3rem)] font-semibold text-[#F4F6FB]">
+  <section id="committee" class="section-dark py-28 px-[8vw] relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/3 right-0 w-[400px] h-[400px] bg-[#1E6EF1]/[0.03] rounded-full blur-[120px]" />
+    </div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="reveal mb-14">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-8 h-[2px] bg-gradient-to-r from-[#1E6EF1] to-[#60A5FA] rounded-full"></div>
+          <div class="font-mono-label text-[#60A5FA]">Organization</div>
+        </div>
+        <h2 class="font-['Space_Grotesk'] text-[clamp(2.5rem,4.5vw,3.5rem)] font-semibold text-[#F4F6FB] leading-tight">
           {{ title }}
         </h2>
       </div>

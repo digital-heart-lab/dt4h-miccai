@@ -14,25 +14,37 @@ const topics = [
 </script>
 
 <template>
-  <section id="topics" class="section-light py-24 px-[8vw]">
-    <div class="max-w-7xl mx-auto">
-      <div class="reveal mb-16">
-        <div class="font-mono-label text-[#1E6EF1] mb-4">Research Scope</div>
-        <h2 class="font-['Space_Grotesk'] text-[clamp(2rem,4vw,3rem)] font-semibold text-[#0B0C0F]">
+  <section id="topics" class="section-light py-28 px-[8vw] relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#1E6EF1]/[0.02] rounded-full blur-[120px]" />
+      <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#1E6EF1]/[0.03] rounded-full blur-[100px]" />
+    </div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="reveal mb-20">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-8 h-[2px] bg-gradient-to-r from-[#1E6EF1] to-[#60A5FA] rounded-full"></div>
+          <div class="font-mono-label text-[#1E6EF1]">Research Scope</div>
+        </div>
+        <h2 class="font-['Space_Grotesk'] text-[clamp(2.5rem,4.5vw,3.5rem)] font-semibold text-[#0B0C0F] leading-tight">
           Topics
         </h2>
+        <p class="text-[#6B7280] mt-4 max-w-2xl text-lg">
+          Explore the cutting-edge research areas that define the future of digital twin technology in healthcare.
+        </p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
-        <div v-for="topic in topics" key={i}
-          class="reveal-scale card-light p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-          <component :is="topic.icon" class="text-[#1E6EF1] mb-4" :size="28" strokeWidth={1.5}></component>
-          <h3 class="font-['Space_Grotesk'] font-semibold text-lg text-[#0B0C0F] mb-2">
+        <div v-for="(topic, index) in topics" :key="index"
+          class="reveal-scale card-light p-7 group cursor-default">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#1E6EF1]/10 to-[#60A5FA]/5 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:from-[#1E6EF1]/20 group-hover:to-[#60A5FA]/10 transition-all duration-500">
+            <component :is="topic.icon" class="text-[#1E6EF1] group-hover:text-[#3B82F6] transition-colors duration-300" :size="26" strokeWidth={1.5} />
+          </div>
+          <h3 class="font-['Space_Grotesk'] font-semibold text-lg text-[#0B0C0F] mb-3 group-hover:text-[#1E6EF1] transition-colors duration-300">
             {{ topic.title }}
           </h3>
-          <p class="text-sm text-[#6B7280]">{{ topic.desc }}</p>
+          <p class="text-sm text-[#6B7280] leading-relaxed">{{ topic.desc }}</p>
         </div>
-
       </div>
     </div>
   </section>

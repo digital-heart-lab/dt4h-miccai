@@ -64,43 +64,44 @@ function scrollTo(id: string) {
 
 <template>
   <nav :class="`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-    ? 'bg-[#0B0C0F]/90 backdrop-blur-md border-b border-[rgba(244,246,251,0.08)]' : 'bg-transparent'}`">
+    ? 'bg-[#0B0C0F]/85 backdrop-blur-xl border-b border-[rgba(244,246,251,0.06)] shadow-[0_4px_30px_rgba(0,0,0,0.3)]' : 'bg-transparent'}`">
     <div class="w-full px-[4vw] py-4 flex items-center justify-between">
-      <div class="flex items-center cursor-pointer" @click="goHome">
-        <div class="h-[30px] w-[30px] bg-no-repeat bg-center bg-contain" :style="{
+      <div class="flex items-center cursor-pointer group" @click="goHome">
+        <div class="h-[32px] w-[32px] bg-no-repeat bg-center bg-contain transition-transform duration-300 group-hover:scale-110" :style="{
           'background-image': `url('${logo}')`
         }"></div>
-        <span class="font-[Space_Grotesk] text-white font-semibold text-xl ml-2">
+        <span class="font-[Space_Grotesk] text-white font-semibold text-xl ml-2.5 tracking-tight">
           {{ name || `DT4H ${year || ''}` }}
         </span>
       </div>
 
-      <div class="hidden md:flex items-center gap-8">
+      <div class="hidden md:flex items-center gap-1">
         <button v-for="item in navs" @click="navTo(item)"
-          class="text-sm text-[#A6ACB8] hover:text-[#F4F6FB] transition-colors">
+          class="text-sm text-[#A6ACB8] hover:text-[#F4F6FB] transition-all duration-300 px-4 py-2 rounded-full hover:bg-[rgba(244,246,251,0.05)]">
           {{ item.label }}
         </button>
       </div>
 
       <button @click="toggleMobileMenu"
-        class="md:hidden relative z-[60] w-[32px] h-[32px] flex flex-col justify-center items-center">
+        class="md:hidden relative z-[60] w-[40px] h-[40px] flex flex-col justify-center items-center rounded-full hover:bg-[rgba(244,246,251,0.05)] transition-colors duration-300">
         <span
-          :class="`block w-6 h-[2px] bg-white transition-all duration-300 origin-center ${mobileMenuOpen ? 'rotate-45 translate-y-[6px]' : ''}`"></span>
+          :class="`block w-5 h-[2px] bg-white transition-all duration-300 origin-center ${mobileMenuOpen ? 'rotate-45 translate-y-[5px]' : ''}`"></span>
         <span
-          :class="`block w-6 h-[2px] bg-white my-[4px] transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`"></span>
+          :class="`block w-5 h-[2px] bg-white my-[4px] transition-all duration-300 ${mobileMenuOpen ? 'opacity-0 scale-0' : ''}`"></span>
         <span
-          :class="`block w-6 h-[2px] bg-white transition-all duration-300 origin-center ${mobileMenuOpen ? '-rotate-45 -translate-y-[6px]' : ''}`"></span>
+          :class="`block w-5 h-[2px] bg-white transition-all duration-300 origin-center ${mobileMenuOpen ? '-rotate-45 -translate-y-[5px]' : ''}`"></span>
       </button>
     </div>
 
     <div
-      :class="`fixed inset-0 top-[62px] z-40 md:hidden transition-all duration-300 ${mobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'}`">
-      <div class="absolute inset-0 bg-[#0B0C0F]/95 backdrop-blur-lg" @click="closeMobileMenu"></div>
+      :class="`fixed inset-0 top-[62px] z-40 md:hidden transition-all duration-500 ${mobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'}`">
+      <div class="absolute inset-0 bg-[#0B0C0F]/98 backdrop-blur-xl" @click="closeMobileMenu"></div>
       <div
-        :class="`absolute top-0 left-0 right-0 bg-[#0B0C0F] border-b border-[rgba(244,246,251,0.08)] transform transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`">
-        <div class="px-[4vw] py-6 flex flex-col gap-4">
-          <button v-for="item in navs" @click="navTo(item)"
-            class="text-center text-lg text-[#A6ACB8] hover:text-[#F4F6FB] transition-colors py-2">
+        :class="`absolute top-0 left-0 right-0 bg-[#0B0C0F] border-b border-[rgba(244,246,251,0.08)] transform transition-transform duration-500 ease-out ${mobileMenuOpen ? 'translate-y-0' : '-translate-y-full'}`">
+        <div class="px-[4vw] py-8 flex flex-col gap-2">
+          <button v-for="(item, index) in navs" @click="navTo(item)"
+            class="text-left text-lg text-[#A6ACB8] hover:text-[#F4F6FB] transition-all duration-300 py-3 px-4 rounded-xl hover:bg-[rgba(244,246,251,0.05)] hover:pl-6"
+            :style="{ transitionDelay: `${index * 0.05}s` }">
             {{ item.label }}
           </button>
         </div>
