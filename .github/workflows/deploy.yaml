@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # 监听 main 分支，可按需修改
+      - main # 监听分支，可按需修改
 
 permissions:
   contents: write # ⭐ 强制启用写权限（最关键）
@@ -11,6 +11,7 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment: dt4h
 
     steps:
       # 拉取仓库代码
@@ -21,7 +22,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
 
       # 3. 安装 pnpm
       - name: Setup pnpm
@@ -36,12 +37,11 @@ jobs:
 
       # 构建项目
       - name: Build project
-        run: npm run build
+        run: pnpx nuxi build --preset=cloudflare_pages
 
       # 发布到 page 分支
-      - name: Deploy to page branch
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: page
+      - name: Deploy to cloudflare pages
+        env:
+          TEST: "TEST"
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN}}
+        run: pnpx wrangler pages deploy dist/ --project-name=dt4h --branch=main --env=preview
