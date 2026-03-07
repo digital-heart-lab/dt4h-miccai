@@ -85,11 +85,11 @@ function scrollTo(id: string) {
       <button @click="toggleMobileMenu"
         class="md:hidden relative z-[60] w-[40px] h-[40px] flex flex-col justify-center items-center rounded-full hover:bg-[rgba(244,246,251,0.05)] transition-colors duration-300">
         <span
-          :class="`block w-5 h-[2px] bg-white transition-all duration-300 origin-center ${mobileMenuOpen ? 'rotate-45 translate-y-[5px]' : ''}`"></span>
+          :class="`block w-5 h-[2px] bg-white transition-all duration-300 origin-center ${mobileMenuOpen ? 'rotate-45 translate-y-[6px]' : ''}`"></span>
         <span
           :class="`block w-5 h-[2px] bg-white my-[4px] transition-all duration-300 ${mobileMenuOpen ? 'opacity-0 scale-0' : ''}`"></span>
         <span
-          :class="`block w-5 h-[2px] bg-white transition-all duration-300 origin-center ${mobileMenuOpen ? '-rotate-45 -translate-y-[5px]' : ''}`"></span>
+          :class="`block w-5 h-[2px] bg-white transition-all duration-300 origin-center ${mobileMenuOpen ? '-rotate-45 -translate-y-[6px]' : ''}`"></span>
       </button>
     </div>
 
@@ -97,10 +97,10 @@ function scrollTo(id: string) {
       :class="`fixed inset-0 top-[62px] z-40 md:hidden transition-all duration-500 ${mobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'}`">
       <div class="absolute inset-0 bg-[#0B0C0F]/98 backdrop-blur-xl" @click="closeMobileMenu"></div>
       <div
-        :class="`absolute top-0 left-0 right-0 bg-[#0B0C0F] border-b border-[rgba(244,246,251,0.08)] transform transition-transform duration-500 ease-out ${mobileMenuOpen ? 'translate-y-0' : '-translate-y-full'}`">
+        :class="`absolute top-0 left-0 right-0 bg-[#0B0C0F] border-b border-[rgba(244,246,251,0.08)] transform transition-transform duration-500 ease-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`">
         <div class="px-[4vw] py-8 flex flex-col gap-2">
           <button v-for="(item, index) in navs" @click="navTo(item)"
-            class="text-left text-lg text-[#A6ACB8] hover:text-[#F4F6FB] transition-all duration-300 py-3 px-4 rounded-xl hover:bg-[rgba(244,246,251,0.05)] hover:pl-6"
+            class="text-center text-lg text-[#A6ACB8] hover:text-[#F4F6FB] transition-all duration-300 py-3 px-4 rounded-xl hover:bg-[rgba(244,246,251,0.05)] hover:pl-6"
             :style="{ transitionDelay: `${index * 0.05}s` }">
             {{ item.label }}
           </button>
