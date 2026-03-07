@@ -23,4 +23,13 @@ export default defineNuxtConfig({
   nitro: {
     preset: "cloudflare_pages",
   },
+  app: {
+    head: {
+      title: "Digital Twin for Healthcare", // default fallback title
+      htmlAttrs: {
+        lang: "en",
+      },
+      link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
+    },
+  },
 });
