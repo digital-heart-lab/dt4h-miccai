@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import logo from "~~/app/assets/images/logo-icon.png"
+import logo from "~~/app/assets/images/logo.png"
 
 interface NavItem {
   label: string,
@@ -63,15 +63,14 @@ function scrollTo(id: string) {
 </script>
 
 <template>
-  <nav :class="`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-    ? 'bg-[#0B0C0F]/85 backdrop-blur-xl border-b border-[rgba(244,246,251,0.06)] shadow-[0_4px_30px_rgba(0,0,0,0.3)]' : 'bg-transparent'}`">
+  <nav
+    :class="`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
+      ? 'bg-[#0B0C0F]/85 backdrop-blur-xl border-b border-[rgba(244,246,251,0.06)] shadow-[0_4px_30px_rgba(0,0,0,0.3)]' : 'bg-transparent'}`">
     <div class="w-full px-[4vw] py-4 flex items-center justify-between">
       <div class="flex items-center cursor-pointer group" @click="goHome">
-        <div class="h-[32px] w-[32px] bg-no-repeat bg-center bg-contain transition-transform duration-300 group-hover:scale-110" :style="{
-          'background-image': `url('${logo}')`
-        }"></div>
+        <img class="h-[40px] object-contain" :src="logo" />
         <span class="font-[Space_Grotesk] text-white font-semibold text-xl ml-2.5 tracking-tight">
-          {{ name || `DT4H ${year || ''}` }}
+          {{ name || `${year || ''}` }}
         </span>
       </div>
 

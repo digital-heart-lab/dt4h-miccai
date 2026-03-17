@@ -8,6 +8,7 @@ import StatusBar from '~/pages/components/StatusBar.vue'
 import Sponsors from '~/pages/components/Sponsors/Index.vue'
 import Foot from '~/layouts/components/foot.vue'
 import CallForPapers from '../../components/CallForPapers.vue'
+import heroBg from "~/assets/images/digital-hand.png"
 
 definePageMeta({
   layout: false,
@@ -61,13 +62,20 @@ useAnimation()
 <template>
   <template v-if="data">
     <Navigation :year="year" :navs="navs" />
-    <div class="min-h-screen bg-[#0B0C0F] pt-[80px] pb-20 px-[8vw] relative overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden">
+      <img :src="heroBg" alt="Clinical Laboratory" class="w-full h-full object-cover animate-pulse-subtle" />
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-[rgba(11,12,15,0.92)] via-[rgba(11,12,15,0.75)] to-[rgba(11,12,15,0.85)]" />
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C0F] via-transparent to-transparent opacity-60" />
+    </div>
+
+    <div class="min-h-screen pt-[80px] pb-20 px-[8vw] relative overflow-hidden flex flex-col justify-center">
       <div class="absolute inset-0 pointer-events-none">
         <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#1E6EF1]/[0.03] rounded-full blur-[150px]" />
         <div class="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-[#1E6EF1]/[0.02] rounded-full blur-[120px]" />
       </div>
 
-      <div class="max-w-7xl mx-auto mb-16 relative z-10">
+      <div class="mb-16 relative z-10">
         <div class="flex items-center gap-3 mb-6">
           <div class="w-8 h-[2px] bg-gradient-to-r from-[#1E6EF1] to-[#60A5FA] rounded-full"></div>
           <span class="text-gradient text-sm font-medium tracking-wide">DT4H Workshop {{ year }}</span>
@@ -118,7 +126,7 @@ useAnimation()
         </p>
       </div>
 
-      <div v-if="data.status === 'completed'" class="max-w-7xl mx-auto mb-16 relative z-10">
+      <div v-if="data.status === 'completed'" class="mb-16 relative z-10">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
           <div class="card-dark p-6 text-center group">
             <div
@@ -159,8 +167,8 @@ useAnimation()
         </div>
       </div>
 
-      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 relative z-10">
-        <div class="card-dark p-8">
+      <div class="grid lg:grid-cols-2 gap-8 relative z-10">
+        <div class="card-dark bg-transparent backdrop-blur-xs p-8">
           <h3 class="font-['Space_Grotesk'] text-xl font-semibold text-[#F4F6FB] mb-6 flex items-center gap-3">
             <div class="w-10 h-10 rounded-xl bg-[#1E6EF1]/10 flex items-center justify-center">
               <BookOpen class="text-[#60A5FA]" :size="20" />
@@ -203,7 +211,7 @@ useAnimation()
           </div>
         </div>
 
-        <div class="card-dark p-8">
+        <div class="card-dark p-8 bg-transparent backdrop-blur-xs">
           <h3 class="font-['Space_Grotesk'] text-xl font-semibold text-[#F4F6FB] mb-6 flex items-center gap-3">
             <div class="w-10 h-10 rounded-xl bg-[#1E6EF1]/10 flex items-center justify-center">
               <Gem class="text-[#60A5FA]" :size="20" />
@@ -232,7 +240,7 @@ useAnimation()
       </div>
 
       <div v-if="data.status === 'completed'" class="max-w-7xl mx-auto mt-8 relative z-10">
-        <div class="card-dark p-8">
+        <div class="card-dark p-8 bg-transparent backdrop-blur-xs">
           <h3 class="font-['Space_Grotesk'] text-xl font-semibold text-[#F4F6FB] mb-6 flex items-center gap-3">
             <div class="w-10 h-10 rounded-xl bg-[#1E6EF1]/10 flex items-center justify-center">
               <Clock class="text-[#60A5FA]" :size="20" />
