@@ -22,7 +22,7 @@ if (!page.value) {
 
 <template>
   <div v-if="page">
-    <Navigation name="DT4H ANNOUNCEMENT" logo-url="/blog" :navs="blogNavs" />
+    <Navigation name="ANNOUNCEMENT" logo-url="/blog" :navs="blogNavs" />
     <div class="bg-[#0B0C0F] pt-24 pb-16 px-[8vw]">
       <div class="max-w-7xl mx-auto">
         <div class="flex items-center gap-4 mb-6">

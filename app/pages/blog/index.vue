@@ -28,7 +28,7 @@ const { data: articles } = await useAsyncData('blog-list', () => {
 
 <template>
   <div class="min-h-[100vh] flex flex-col bg-[#0B0C0F]">
-    <Navigation name="DT4H ANNOUNCEMENT" logo-url="/blog" :navs="blogNavs" />
+    <Navigation name="ANNOUNCEMENT" logo-url="/blog" :navs="blogNavs" />
 
     <div class="relative pt-32 pb-20 px-[8vw] overflow-hidden">
       <div class="absolute inset-0 pointer-events-none">
