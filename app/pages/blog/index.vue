@@ -17,13 +17,18 @@ export const blogNavs = [
 <script setup lang="ts">
 import Foot from '~/layouts/components/foot.vue';
 import Navigation from '../components/Navigation.vue';
+import useAnimation from '../composables/useAnimation';
+import { ArrowRight } from 'lucide-vue-next';
 definePageMeta({
   layout: false,
 })
 
+useAnimation()
+
 const { data: articles } = await useAsyncData('blog-list', () => {
   return queryCollection('blog').where('path', 'LIKE', '/blog/%').all()
 })
+console.log(articles.value)
 </script>
 
 <template>
@@ -50,15 +55,14 @@ const { data: articles } = await useAsyncData('blog-list', () => {
     </div>
 
     <div class="flex-1 px-[8vw] pb-20">
-      <div class="max-w-4xl mx-auto">
+      <div class="max-w-4xl">
         <div class="space-y-6">
           <article v-for="(article, index) in articles" :key="article.path" class="reveal">
-            <NuxtLink :to="`${article.path}`"
-              class="group block card-dark p-8 hover:border-[rgba(30,110,241,0.2)] transition-all duration-500">
+            <div class="group block card-dark p-8  transition-all duration-500">
               <div class="flex items-start gap-6">
                 <div class="flex-shrink-0">
                   <div
-                    class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#1E6EF1]/15 to-[#60A5FA]/5 flex items-center justify-center group-hover:from-[#1E6EF1]/25 group-hover:to-[#60A5FA]/10 transition-all duration-500">
+                    class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#1E6EF1]/15 to-[#60A5FA]/5 flex items-center justify-center transition-all duration-500">
                     <span class="font-['Space_Grotesk'] font-bold text-[#60A5FA] text-lg">
                       {{ new Date(article.date).getDate() }}
                     </span>
@@ -72,22 +76,20 @@ const { data: articles } = await useAsyncData('blog-list', () => {
 
                 <div class="flex-1 min-w-0">
                   <h2
-                    class="font-['Space_Grotesk'] text-2xl font-semibold text-[#F4F6FB] group-hover:text-[#60A5FA] transition-colors duration-300 mb-3 line-clamp-2">
+                    class="font-['Space_Grotesk'] text-2xl font-semibold text-[#F4F6FB]  transition-colors duration-300 mb-3 line-clamp-2">
                     {{ article.title }}
                   </h2>
                   <p class="text-[#6B7280] leading-relaxed line-clamp-2 mb-4">
                     {{ article.description }}
                   </p>
-                  <div class="flex items-center gap-2 text-[#60A5FA] text-sm font-medium">
+                  <NuxtLink :to="`${article.path}`"
+                    class="flex items-center gap-1 text-[#60A5FA] text-sm font-medium hover:text-[#1E6EF1] transition-colors duration-300">
                     <span>Read more</span>
-                    <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none"
-                      viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </div>
+                    <ArrowRight :size="16" />
+                  </NuxtLink>
                 </div>
               </div>
-            </NuxtLink>
+            </div>
           </article>
         </div>
 

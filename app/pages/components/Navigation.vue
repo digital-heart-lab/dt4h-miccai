@@ -70,7 +70,7 @@ function scrollTo(id: string) {
       <div class="flex items-center cursor-pointer group" @click="goHome">
         <img class="h-[40px] object-contain" :src="logo" />
         <span class="font-[Space_Grotesk] text-white font-semibold text-xl ml-2.5 tracking-tight">
-          {{ name || `${year || ''}` }}
+          {{ name || '' }}
         </span>
       </div>
 
