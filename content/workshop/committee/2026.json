@@ -4,6 +4,7 @@
   "members": [
     {
       "name": "Lei Li",
+      "role": "Program Chair",
       "link": "https://lileitech.github.io/",
       "institution": "National University of Singapore",
       "avatar": "/images/avatars/Lei-Li.jpg",
@@ -11,6 +12,7 @@
     },
     {
       "name": "Viktor Jirsa",
+      "role": "General Chair",
       "link": "https://ins-amu.fr/jirsaviktor",
       "avatar": "/images/avatars/Round-Jirsa-V.jpg",
       "institution": "Institut de Neurosciences des Systèmes",
@@ -18,6 +20,7 @@
     },
     {
       "name": "Jianfeng Feng",
+      "role": "Co-Chair",
       "link": "https://istbi.fudan.edu.cn/lnen/info/1157/1629.htm",
       "avatar": "/images/avatars/Jianfeng-Feng.jpg",
       "institution": "Fudan University",
@@ -25,13 +28,15 @@
     },
     {
       "name": "Jun Deng",
+      "role": "Co-Chair",
       "link": "https://medicine.yale.edu/profile/jun-deng/",
       "avatar": "/images/avatars/Jun-Deng.jpg",
       "institution": "Yale University",
       "country": "USA"
     },
     {
-      "name": "Stephen Aylward ",
+      "name": "Stephen Aylward",
+      "role": "Co-Chair",
       "link": "https://scholar.google.com/citations?user=u1UdL4oAAAAJ&hl=en",
       "avatar": "/images/avatars/Stephen-Aylward.jpg",
       "institution": "NVIDIA",
@@ -39,10 +44,25 @@
     },
     {
       "name": "Kyungho Yoon",
+      "role": "Co-Chair",
       "link": "https://sites.google.com/view/yoonlabyonsei/professor",
       "avatar": "/images/avatars/Kyungho-Yoon.jpg",
       "institution": "Yonsei University",
       "country": "Korea"
+    },
+    {
+      "name": "Xuan Yang",
+      "role": "Delivery",
+      "avatar": "/images/avatars/xuan-yang.jpg",
+      "institution": "National University of Singapore",
+      "country": "Singapore"
+    },
+    {
+      "name": "Zhen Li",
+      "role": "Delivery",
+      "avatar": "/images/avatars/zhen-li.jpg",
+      "institution": "National University of Singapore",
+      "country": "Singapore"
     }
   ]
 }

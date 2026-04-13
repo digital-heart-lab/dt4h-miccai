@@ -11,6 +11,14 @@ const { data: standingCommittee } = await useAsyncData(() =>
   queryCollection('committee').where('type', '=', 'standing').first()
 )
 
+const members = computed(() => {
+  const all = props.data?.members ?? standingCommittee.value?.members ?? []
+  return {
+    main: all.filter(m => m.role !== 'Delivery'),
+    delivery: all.filter(m => m.role === 'Delivery'),
+  }
+})
+
 </script>
 
 <template>
@@ -29,13 +37,14 @@ const { data: standingCommittee } = await useAsyncData(() =>
           {{ title }}
         </h2>
       </div>
-      <div v-if="data" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children mb-10">
-        <CommitteeMember v-for="member in data.members" :member="member" />
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children mb-10">
+        <CommitteeMember v-for="member in members.main" :member="member" />
       </div>
 
-      <template v-else-if="standingCommittee">
+      <template v-if="members.delivery.length">
+        <h3 class="font-['Space_Grotesk'] text-2xl font-semibold text-[#F4F6FB] mb-8">Deliver</h3>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children mb-10">
-          <CommitteeMember v-for="member in standingCommittee.members" :member="member" />
+          <CommitteeMember v-for="member in members.delivery" :member="member" />
         </div>
       </template>
     </div>

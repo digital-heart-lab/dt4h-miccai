@@ -19,7 +19,6 @@ defineProps<{
       </div>
       <div class="flex-1 min-w-0">
         <h3 class="font-['Space_Grotesk'] font-semibold text-[#F4F6FB] group-hover:text-[#60A5FA] transition-colors duration-300 truncate">{{ member.name }}</h3>
-        <div class="text-sm text-[#60A5FA] mb-1.5 font-medium">{{ member.role }}</div>
         <div class="text-xs text-[#6B7280] truncate">{{ member.institution }}</div>
         <div class="text-xs text-[#4B5563]">{{ member.country }}</div>
       </div>
