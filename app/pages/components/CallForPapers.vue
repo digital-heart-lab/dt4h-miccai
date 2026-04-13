@@ -9,7 +9,7 @@ defineProps<{
 }>()
 
 const steps = [
-  { step: 1, text: 'Register on CMT' },
+  { step: 1, text: 'Register on OpenReview' },
   { step: 2, text: 'Upload PDF + supplementary' },
   { step: 3, text: 'Respond to reviewer questions' },
 ]
@@ -83,7 +83,7 @@ const topics = [
               </a>
               <a :href="cmtLink" target="_blank" rel="noopener noreferrer"
                 class="btn-primary flex items-center gap-2 text-sm">
-                <ExternalLink :size="16" /> Open CMT
+                <ExternalLink :size="16" /> Open OpenReview
               </a>
             </div>
           </div>
