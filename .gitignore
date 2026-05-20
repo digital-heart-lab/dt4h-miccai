@@ -24,3 +24,33 @@ logs
 .env
 .env.*
 !.env.example
+
+# =========================
+# Claude Code (Anthropic)
+# =========================
+
+# 个人专属的项目偏好
+CLAUDE.local.md
+
+# 凭据与安全信息 (Credentials)
+.claude/credentials.json
+.claude/.credentials.json
+.claude/security_warnings_*.json
+.claude/mcp-needs-auth-cache.json
+
+# 内部状态、缓存与会话数据 (Internal State & Sessions)
+.claude.json
+.claude.json.backup.*
+.claude/history.jsonl
+.claude/stats-cache.json
+.claude/backups/
+.claude/cache/
+.claude/debug/
+.claude/file-history/
+.claude/paste-cache/
+.claude/session-env/
+.claude/shell-snapshots/
+
+# 自动记忆与对话日志 (Auto-memory logs)
+.claude/projects/**/*.jsonl
+.claude/projects/**/*.txt
