@@ -10,6 +10,7 @@ export const KeynoteSchema = z.object({
   talkAbstract: z.string().optional(),
   bio: z.string().optional(),
   links: z.array(z.string()).optional(),
+  avatar: z.string().optional(),
 });
 
 export const KeynoteListSchema = z.object({
