@@ -5,6 +5,12 @@ export const KeynoteSchema = z.object({
   name: z.string(),
   affil: z.string(),
   topic: z.string(),
+  website: z.string().optional(),
+  talkTitle: z.string().optional(),
+  talkAbstract: z.string().optional(),
+  bio: z.string().optional(),
+  links: z.array(z.string()).optional(),
+  avatar: z.string().optional(),
 });
 
 export const KeynoteListSchema = z.object({

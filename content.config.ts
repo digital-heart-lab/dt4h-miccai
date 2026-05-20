@@ -6,6 +6,7 @@ import {
   SponsorListSchema,
   TimelineSchema,
   PaperTemplateListSchema,
+  KeynoteListSchema,
 } from "./shared/schemas/workshop";
 
 export default defineContentConfig({
@@ -34,6 +35,11 @@ export default defineContentConfig({
       type: "data",
       source: "workshop/paper-template/*.json",
       schema: PaperTemplateListSchema,
+    }),
+    keynotes: defineCollection({
+      type: "data",
+      source: "workshop/keynotes/*.json",
+      schema: KeynoteListSchema,
     }),
     blog: defineCollection({
       type: "page",

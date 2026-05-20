@@ -1,0 +1,21 @@
+---
+author: DT4H 2026 Organizers
+title: "Announcing Keynote: Prof. Sebastian Kozerke at DT4H 2026"
+date: "2026-05-20"
+---
+
+Speaker: Prof Sebastian Kozerke  
+Talk Title: From Spins to Images to Digital Twins and Back Again
+
+## Talk Abstract
+This lecture will reflect on the evolution of cardiovascular magnetic resonance (CMR) imaging from accelerated image reconstruction toward physics-informed digital twinning, highlighting how recent advances in artificial intelligence, computational modeling, and data-driven inference are reshaping the field. Beginning with the transition from supervised to self-supervised and generalizable reconstruction methods, the lecture will discuss how modern learning-based approaches can recover high-quality images from highly undersampled data while reducing dependence on fully sampled references. The presentation will further examine the growing role of biophysical modeling and synthetic data generation in overcoming one of the central challenges in medical AI: the lack of reliable ground truth. By integrating computational physiology, virtual MRI scanners, and controllable image synthesis, emerging frameworks now enable the generation of realistic paired datasets for training, validation, and uncertainty quantification of AI/ML methods in cardiovascular imaging. Examples including FlowMRI-Net, synthetic 4D/5D flow MRI, and physics-informed late gadolinium enhancement synthesis will illustrate how these tools are advancing robust image analysis and inference. Finally, the lecture will place these developments into the broader context of personalized cardiovascular medicine through the concept of digital twins. The SwissHeart initiative will serve as an example of how multimodal imaging, physiological measurements, biomarkers, and computational models can be integrated to create population-scale digital twins capable of characterizing healthy variation, tracking disease progression, and ultimately informing individualized prediction and intervention. The keynote will conclude with a perspective on future opportunities and challenges for uncertainty-aware, interpretable, and clinically deployable AI in cardiovascular imaging.
+
+## Short Bio
+Sebastian Kozerke, PhD, is Professor of Biomedical Imaging at ETH Zurich and the University of Zurich, where he leads research in cardiovascular magnetic resonance imaging, computational modeling, and AI-driven biomedical imaging. His work spans from MR physics, accelerated image reconstruction, flow imaging and tissue characterization to physics-informed digital twinning for personalized cardiovascular medicine. After studying electrical and biomedical engineering, he obtained his PhD and Venia legendi from ETH Zurich and subsequently held research and academic appointments at King's College London before returning to Zurich. He is also co-founder of GyroTools, supporting the translation of MRI research into clinical and research applications. Sebastian Kozerke has made internationally recognized contributions to cardiovascular MRI, including accelerated and self-supervised image reconstruction, quantitative flow imaging, MR spectroscopy, and the integration of biophysical modeling with machine learning. His current research focuses on uncertainty-aware AI, synthetic imaging, and the creation of personalized cardiovascular digital twins to improve disease prediction and individualized therapy. He is the author of more than 340 peer-reviewed journal articles and 8 patents.
+
+https://www.linkedin.com/in/kozerke
+
+https://pubmed.ncbi.nlm.nih.gov/?term=kozerke-s
+
+www.cmr.ethz.ch
+
