@@ -85,13 +85,13 @@ const readingMinutes = computed(() => {
             <span>{{ readingMinutes }} min read</span>
           </div>
         </div>
+
+        <div class="markdown-body prose prose-invert lg:prose-xl max-w-[900px] py-10" style="background: transparent">
+          <ContentRenderer v-if="page" :value="page" />
+        </div>
       </div>
     </div>
 
-    <div class="markdown-body max-w-[900px] prose prose-invert lg:prose-xl flex-1"
-      style="margin: 0 8vw; background: transparent">
-      <ContentRenderer v-if="page" :value="page" />
-    </div>
 
     <Foot />
   </div>

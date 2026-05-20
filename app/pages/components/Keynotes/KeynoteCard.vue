@@ -54,7 +54,8 @@ const blogHref = computed(() => `/blog/keynote-${props.year}-${keynoteSlug(props
       <!-- ───────── Speaker pane ───────── -->
       <aside
         class="relative p-6 md:p-8 md:border-r md:border-[rgba(11,12,15,0.06)] md:bg-gradient-to-br md:from-[#F7F9FD] md:to-white">
-        <div class="md:hidden absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-[#1E6EF1]/15 to-transparent" />
+        <div
+          class="md:hidden absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-[#1E6EF1]/15 to-transparent" />
 
         <div class="flex md:flex-col items-center md:items-start gap-5 md:gap-6">
           <div
@@ -71,7 +72,8 @@ const blogHref = computed(() => `/blog/keynote-${props.year}-${keynoteSlug(props
               <a v-if="keynote.website" :href="keynote.website" target="_blank" rel="noopener noreferrer"
                 class="inline-flex items-center gap-1.5 hover:text-[#1E6EF1] transition-colors duration-200">
                 {{ keynote.name }}
-                <ArrowUpRight class="text-[#6B7280] group-hover:text-[#1E6EF1] transition-colors duration-200" :size="16" />
+                <ArrowUpRight class="text-[#6B7280] group-hover:text-[#1E6EF1] transition-colors duration-200"
+                  :size="16" />
               </a>
               <template v-else>{{ keynote.name }}</template>
             </h3>
@@ -90,21 +92,13 @@ const blogHref = computed(() => `/blog/keynote-${props.year}-${keynoteSlug(props
 
       <!-- ───────── Keynote pane ───────── -->
       <section class="p-6 md:p-8">
-        <div class="flex items-center gap-3 mb-4">
-          <span
-            class="inline-flex items-center gap-1.5 font-mono-label text-[#1E6EF1] bg-[#1E6EF1]/[0.08] border border-[#1E6EF1]/15 px-2.5 py-1 rounded-full">
-            {{ indexLabel }}
-          </span>
-          <span class="font-mono-label text-[#6B7280]">{{ keynote.topic }}</span>
-        </div>
 
-        <h4
-          v-if="hasTalk"
+        <h4 v-if="hasTalk"
           class="font-['Space_Grotesk'] text-xl md:text-2xl font-semibold text-[#0B0C0F] leading-snug mb-5">
           {{ keynote.talkTitle }}
         </h4>
 
-        <p v-if="hasAbstract" class="text-[15px] text-[#374151] leading-relaxed line-clamp-4 mb-5">
+        <p v-if="hasAbstract" class="text-[15px] text-[#374151] leading-relaxed line-clamp-6 mb-5">
           {{ keynote.talkAbstract }}
         </p>
 

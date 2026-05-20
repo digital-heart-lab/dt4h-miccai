@@ -23,7 +23,7 @@ defineProps<{
           <div class="h-[1px] w-12 bg-gradient-to-l from-transparent to-[#1E6EF1]/30"></div>
         </div>
         <h2 class="font-['Space_Grotesk'] text-[clamp(2.5rem,4.5vw,3.5rem)] font-semibold text-[#0B0C0F] leading-tight">
-          Keynotes
+          Keynote Speakers
         </h2>
       </div>
 
