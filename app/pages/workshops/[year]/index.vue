@@ -2,6 +2,7 @@
 import { ArrowRight, Award, BarChart3, BookOpen, Calendar, CalendarDays, CheckCircle, ChevronRight, Clock, DiamondPlus, ExternalLink, FileText, Gem, Globe, Hammer, Mail, MapPin, Rocket, Users } from 'lucide-vue-next'
 import Navigation from '../../components/Navigation.vue'
 import KeyDates from '../../components/KeyDates.vue'
+import Keynotes from '../../components/Keynotes/Index.vue'
 import Committee from '../../components/Committee/Index.vue'
 import useAnimation from '~/pages/composables/useAnimation'
 import StatusBar from '~/pages/components/StatusBar.vue'
@@ -42,6 +43,9 @@ const navs = [{
 }, {
   label: 'Timeline',
   id: 'timeline'
+}, {
+  label: 'Keynotes',
+  id: 'keynotes'
 }, {
   label: 'Committee',
   id: 'committee'
@@ -219,22 +223,14 @@ useAnimation()
             Call for Sponsors
           </h3>
           <div class="space-y-4">
-            <template v-if="!data.keynotes?.keynotes">
-              <p class="text-[#6B7280] leading-relaxed">
-                Support the future of precision healthcare by sponsoring our workshop exploring cutting-edge digital
-                twin technology for patient simulation and clinical decision support.
-              </p>
-              <a href="mailto:lei.li@nus.edu.sg?subject=Sponsorship%20Interest:%20DT4H%202026" target="_blank"
-                rel="noopener noreferrer" class="btn-secondary w-full flex items-center justify-center gap-2 mt-6">
-                <Mail :size="16" /> Contact Us
-              </a>
-            </template>
-            <div v-for="keynote in data.keynotes?.keynotes" :key="keynote.name"
-              class="p-4 rounded-xl bg-[rgba(244,246,251,0.03)] hover:bg-[rgba(244,246,251,0.05)] transition-colors duration-300">
-              <div class="font-medium text-[#F4F6FB]">{{ keynote.name }}</div>
-              <div class="text-sm text-[#6B7280]">{{ keynote.affil }}</div>
-              <div class="text-sm text-[#60A5FA] mt-2">{{ keynote.topic }}</div>
-            </div>
+            <p class="text-[#6B7280] leading-relaxed">
+              Support the future of precision healthcare by sponsoring our workshop exploring cutting-edge digital
+              twin technology for patient simulation and clinical decision support.
+            </p>
+            <a href="mailto:lei.li@nus.edu.sg?subject=Sponsorship%20Interest:%20DT4H%202026" target="_blank"
+              rel="noopener noreferrer" class="btn-secondary w-full flex items-center justify-center gap-2 mt-6">
+              <Mail :size="16" /> Contact Us
+            </a>
           </div>
         </div>
       </div>
@@ -262,6 +258,7 @@ useAnimation()
     <CallForPapers v-if="data.paperTemplates?.templates" :paper-tempaltes="data.paperTemplates.templates"
       :cmt-link="data.cmtLink" :paper-requirement-link="data.paperRequirementLink" />
     <KeyDates v-if="data.timeline?.events" :dates="data.timeline.events" />
+    <Keynotes v-if="data.keynotes?.keynotes?.length" :keynotes="data.keynotes.keynotes" :year="data.keynotes.year" />
     <Committee v-if="data.committee" :data="data.committee" />
     <Sponsors v-if="data.sponsors" :sponsors="data.sponsors" />
     <Foot />

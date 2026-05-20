@@ -136,8 +136,8 @@ const viewActive = () => {
                 <div class="group cursor-default">
                   <div
                     class="text-2xl font-bold text-[#60A5FA] group-hover:scale-110 transition-transform duration-300">
-                    <template v-if="activeEdition.keynoteSpeakers">
-                      {{ activeEdition.keynoteSpeakers || '?' }}
+                    <template v-if="activeEdition.keynotes?.keynotes?.length">
+                      {{ activeEdition.keynotes.keynotes.length }}
                     </template>
                     <Construction v-else />
                   </div>

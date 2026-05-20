@@ -40,7 +40,7 @@ if (!page.value) {
         </div>
       </div>
     </div>
-    <div class="markdown-body max-w-[900px] prose lg:prose-xl" style="margin: 0 8vw">
+    <div class="markdown-body max-w-[900px] prose lg:prose-xl" style="margin: 0 8vw; background: transparent">
       <ContentRenderer v-if="page" :value="page" />
     </div>
     <Foot />
