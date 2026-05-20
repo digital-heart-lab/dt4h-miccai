@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowRight, ArrowUpRight, Sparkles } from 'lucide-vue-next'
+import { ArrowRight, ArrowUpRight } from 'lucide-vue-next'
 import type { Keynote } from '~~/shared/schemas/workshop'
 import { hostnameOf, iconForUrl, keynoteSlug } from '~/utils/linkIcons'
 
@@ -58,15 +58,12 @@ const blogHref = computed(() => `/blog/keynote-${props.year}-${keynoteSlug(props
 
         <div class="flex md:flex-col items-center md:items-start gap-5 md:gap-6">
           <div
-            class="relative w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-[#1E6EF1]/20 via-[#60A5FA]/10 to-[#1E6EF1]/5 flex items-center justify-center flex-shrink-0 shadow-[0_4px_18px_rgba(30,110,241,0.18)] group-hover:rotate-2 group-hover:scale-[1.04] transition-transform duration-300">
+            class="relative w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-[#1E6EF1]/20 via-[#60A5FA]/10 to-[#1E6EF1]/5 flex items-center justify-center flex-shrink-0 shadow-[0_4px_18px_rgba(30,110,241,0.18)]">
             <img v-if="keynote.avatar" :src="keynote.avatar" :alt="`${keynote.name} portrait`"
               class="absolute inset-0 w-full h-full object-cover rounded-2xl" />
             <span v-else class="font-['Space_Grotesk'] font-bold text-[#1E6EF1] text-xl md:text-2xl tracking-tight">
               {{ initials }}
             </span>
-            <div class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-white flex items-center justify-center shadow-sm z-10">
-              <Sparkles class="text-[#60A5FA]" :size="10" />
-            </div>
           </div>
 
           <div class="min-w-0 flex-1 md:flex-none">
@@ -113,7 +110,7 @@ const blogHref = computed(() => `/blog/keynote-${props.year}-${keynoteSlug(props
 
         <NuxtLink v-if="hasBlogPost" :to="blogHref"
           class="inline-flex items-center gap-1.5 text-sm font-medium text-[#1E6EF1] hover:text-[#1E40AF] transition-colors duration-200 group/cta">
-          Read full keynote
+          Read more
           <ArrowRight :size="15" class="group-hover/cta:translate-x-0.5 transition-transform duration-200" />
         </NuxtLink>
       </section>
