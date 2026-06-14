@@ -3,14 +3,19 @@
   "location": "Strasbourg, France",
   "date": [
     "2026",
-    "October",
-    "Sep 27/ Oct 1"
+    "September",
+    "27th"
   ],
   "status": "ongoing",
   "submissionDeadline": [
     "2026",
     "June",
     "20th"
+  ],
+  "revisedSubmissionDeadline": [
+    "2026",
+    "July",
+    "1st"
   ],
   "miccaiLink": "https://conferences.miccai.org/2026/en/default.asp",
   "cmtLink": "https://openreview.net/group?id=MICCAI.org/2026/Workshop/DT4H",

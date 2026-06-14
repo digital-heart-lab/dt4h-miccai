@@ -21,7 +21,10 @@ export const KeynoteListSchema = z.object({
 export const EventSchema = z.object({
   event: z.string(),
   month: z.string(),
-  day: z.number(),
+  day: z.union([z.string(), z.number()]),
+  revisedMonth: z.string().optional(),
+  revisedDay: z.union([z.string(), z.number()]).optional(),
+  highlight: z.enum(["revision"]).optional(),
   time: z.string().optional(),
 });
 
@@ -70,6 +73,9 @@ export const WorkshopSchema = z.object({
     z.string().optional(),
     z.string().optional(),
   ]),
+  revisedSubmissionDeadline: z
+    .tuple([z.string(), z.string().optional(), z.string().optional()])
+    .optional(),
   miccaiLink: z.string(),
   cmtLink: z.string(),
   paperRequirementLink: z.string(),

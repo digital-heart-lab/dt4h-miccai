@@ -20,7 +20,7 @@ defineProps<{
     </div>
 
     <div class="max-w-7xl mx-auto relative z-10">
-      <div class="grid lg:grid-cols-3 gap-16 items-center">
+      <div class="grid xl:grid-cols-[0.8fr_2.2fr] gap-10 items-center">
         <div class="reveal-left">
           <div class="flex items-center gap-3 mb-5">
             <div class="w-8 h-[2px] bg-gradient-to-r from-[#1E6EF1] to-[#60A5FA] rounded-full"></div>
@@ -34,22 +34,37 @@ defineProps<{
           </p>
         </div>
 
-        <div class="lg:col-span-2">
+        <div class="min-w-0">
           <div class="relative">
             <div
               class="absolute top-8 left-0 right-0 h-[2px] bg-gradient-to-r from-[#1E6EF1] via-[#3B82F6] to-[#1E6EF1] opacity-20">
             </div>
 
-            <div class="grid grid-cols-5 gap-4">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2">
               <div v-for="(item, i) in dates" class="reveal-scale text-center group cursor-default"
                 :style="{ transitionDelay: `${i * 0.1}s` }">
                 <div class="relative mb-6">
                   <div class="w-4 h-4 rounded-full bg-gradient-to-br from-[#1E6EF1] to-[#3B82F6] mx-auto relative z-10 shadow-[0_0_20px_rgba(30,110,241,0.5)] group-hover:scale-125 transition-transform duration-300"></div>
                   <div class="absolute inset-0 w-4 h-4 rounded-full bg-[#1E6EF1] mx-auto animate-ping opacity-20"></div>
                 </div>
-                <div class="font-mono-label text-base text-[#60A5FA] mb-2 group-hover:text-[#93C5FD] transition-colors duration-300">{{ item.month }}</div>
+                <div
+                  class="font-mono-label text-base text-[#60A5FA] mb-2 group-hover:text-[#93C5FD] transition-colors duration-300">
+                  <template v-if="item.revisedMonth">
+                    <del class="text-[#EF4444] decoration-[#EF4444] decoration-2">{{ item.month }}</del>
+                    <span class="ml-1">{{ item.revisedMonth }}</span>
+                  </template>
+                  <template v-else>
+                    <span :class="item.highlight === 'revision' ? 'text-[#EF4444]' : ''">{{ item.month }}</span>
+                  </template>
+                </div>
                 <div class="font-['Space_Grotesk'] font-bold text-2xl text-[#F4F6FB] mb-2 group-hover:scale-110 transition-transform duration-300">
-                  {{ item.day }}
+                  <template v-if="item.revisedDay">
+                    <del class="text-[#EF4444] decoration-[#EF4444] decoration-2">{{ item.day }}</del>
+                    <span class="ml-1">{{ item.revisedDay }}</span>
+                  </template>
+                  <template v-else>
+                    <span :class="item.highlight === 'revision' ? 'text-[#EF4444]' : ''">{{ item.day }}</span>
+                  </template>
                 </div>
                 <div class="text-xs text-[#6B7280] leading-relaxed">{{ item.event }}</div>
               </div>

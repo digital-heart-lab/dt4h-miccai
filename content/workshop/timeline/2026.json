@@ -2,9 +2,17 @@
   "year": 2026,
   "events": [
     {
+      "event": "Abstract Registration",
+      "day": "20",
+      "month": "June",
+      "highlight": "revision"
+    },
+    {
       "event": "Paper Deadline",
       "day": "20",
-      "month": "June"
+      "month": "June",
+      "revisedDay": "1",
+      "revisedMonth": "July"
     },
     {
       "event": "Reviews Due",
@@ -19,12 +27,12 @@
     {
       "event": "Camera Ready",
       "day": "1",
-      "month": "August"
+      "month": "Aug"
     },
     {
       "event": "Workshop",
-      "day": "27/1 (Oct)",
-      "month": "September"
+      "day": 27,
+      "month": "Sep"
     }
   ]
 }

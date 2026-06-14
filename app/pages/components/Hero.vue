@@ -104,7 +104,9 @@ const viewActive = () => {
                 </div>
                 <div>
                   <div class="font-medium text-[#F4F6FB]">{{ formatDate(activeEdition.date) }}</div>
-                  <div v-if="activeEdition.date.length < 3" class="text-sm text-[#6B7280]">Exact date TBA</div>
+                  <div class="text-sm text-[#6B7280]">
+                    {{ activeEdition.date.length < 3 ? 'Exact date TBA' : 'Workshop date' }}
+                  </div>
                 </div>
               </div>
 
@@ -126,7 +128,17 @@ const viewActive = () => {
                 </div>
                 <div>
                   <div class="font-medium text-[#F4F6FB]">Paper Submission Deadline</div>
-                  <div class="text-sm text-[#6B7280]">{{ formatDate(activeEdition.submissionDeadline) }}</div>
+                  <div class="text-sm text-[#6B7280]">
+                    <template v-if="activeEdition.revisedSubmissionDeadline">
+                      <del class="text-[#EF4444] decoration-[#EF4444] decoration-2">
+                        {{ formatDate(activeEdition.submissionDeadline) }}
+                      </del>
+                      <span class="ml-2 text-[#A6ACB8]">{{ formatDate(activeEdition.revisedSubmissionDeadline) }}</span>
+                    </template>
+                    <template v-else>
+                      {{ formatDate(activeEdition.submissionDeadline) }}
+                    </template>
+                  </div>
                 </div>
               </div>
             </div>

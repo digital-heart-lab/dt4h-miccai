@@ -31,7 +31,7 @@ const members = computed(() => {
       <div class="reveal mb-14">
         <div class="flex items-center gap-3 mb-5">
           <div class="w-8 h-[2px] bg-gradient-to-r from-[#1E6EF1] to-[#60A5FA] rounded-full"></div>
-          <div class="font-mono-label text-[#60A5FA]">Organization</div>
+          <div class="font-mono-label text-[#60A5FA]">Committee</div>
         </div>
         <h2 class="font-['Space_Grotesk'] text-[clamp(2.5rem,4.5vw,3.5rem)] font-semibold text-[#F4F6FB] leading-tight">
           {{ title }}
