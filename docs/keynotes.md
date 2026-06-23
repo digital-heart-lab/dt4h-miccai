@@ -15,7 +15,15 @@ Keynote Speaker 2:
 Prof Viktor Jirsa
 Website:
 https://ins-amu.fr/jirsaviktor
-Talk Title: tbc
-Talk Abstract: tbc
+Talk Title:
+From Brain Maps to Brain Twins
+Talk Abstract:
+Over the past two decades, neuroimaging has transformed how we describe the brain, yielding ever-richer maps of structure, function, and connectivity. Yet description alone does not explain, and the questions we increasingly face are mechanistic and individual: why does this brain generate these seizures, and what will this intervention do?
+
+Virtual brain twins address this gap by augmenting empirical brain maps with generative mechanism. Epistemically, a digital brain twin is neither a simulation nor a statistical model alone, but a coupling between three elements: (i) a personalized referent — the individual brain, characterized through multimodal imaging; (ii) a generative mechanistic brain model, expressing network activity on the subject's connectome; and (iii) a bidirectional inference loop linking the two, inverting the model against individual data to estimate latent parameters with quantified uncertainty. I illustrate the workflow through the Virtual Epileptic Patient (VEP), developed for drug-resistant focal epilepsy. The connectome is reconstructed from DTI and co-registered with anatomical MRI and CT; region-specific neural mass models are placed on this connectome; and epileptogenicity of a brain region is estimated by Bayesian inversion using Hamiltonian Monte Carlo. The inference yields full posteriors and inference diagnostics, essential where neurosurgical decisions are irreversible. VEP has just finished prospective clinical evaluation (EPINOV).
 Short Bio:
-Originally trained in Theoretical Physics and Philosophy in the 1990s, Dr. Jirsa has made contributions to the understanding of how network structure constrains the emergence of functional dynamics using methods from nonlinear dynamic system theory and computational neuroscience. Dr. Jirsa has been awarded several international and national awards for his research including the Francois Erbsmann Prize in 2001, NASPSPA Early Career Distinguished Scholar Award in 2004, and Grand Prix de Recherche de Provence in 2018. He serves on various Editorial Boards and has published more than 150 scientific articles and book chapters, as well as co-edited several books including the Handbook of Brain Connectivity. Dr. Jirsa is one of the Lead Scientists in the Human Brain Project and The Virtual Brain.
+Viktor Jirsa is Director of the Inserm Institut de Neurosciences des Systèmes at Aix-Marseille-Université in Marseille, France. Dr. Jirsa received his PhD in 1996 in Theoretical Physics and has since then contributed to the field of Theoretical Neuroscience through the development of large-scale brain network models based on realistic connectivity. His work has been foundational for network science in brain medicine and the use of personalized virtual brain models in epilepsy. He is Scientific Director of the clinical trial EPINOV, evaluating the use of virtual brain technology in epilepsy surgery. Dr. Jirsa serves as Chief Science Officer of the European digital neuroscience infrastructure EBRAINS (https://ebrains.eu/) and Coordinator of the Virtual Brain Twin consortium (https://www.virtualbraintwin.eu/). He has been awarded several international prizes for his research including the first HBP Innovation prize (2021) and has published more than 200 scientific articles.
+https://www.linkedin.com/in/viktor-jirsa-2518b123a/
+https://pubmed.ncbi.nlm.nih.gov/?term=Jirsa+V&cauthor_id=36972720
+https://ebrains.eu/
+https://www.virtualbraintwin.eu/
