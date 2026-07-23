@@ -105,7 +105,7 @@ const viewActive = () => {
                 <div>
                   <div class="font-medium text-[#F4F6FB]">{{ formatDate(activeEdition.date) }}</div>
                   <div class="text-sm text-[#6B7280]">
-                    {{ activeEdition.date.length < 3 ? 'Exact date TBA' : 'Workshop date' }}
+                    {{ activeEdition.date.length < 3 ? 'Exact date TBA' : '13:30-18:00' }}
                   </div>
                 </div>
               </div>
@@ -117,7 +117,7 @@ const viewActive = () => {
                 </div>
                 <div>
                   <div class="font-medium text-[#F4F6FB]">{{ activeEdition.location }}</div>
-                  <div class="text-sm text-[#6B7280]">In-person workshop</div>
+                  <div class="text-sm text-[#6B7280]">Bruxelles</div>
                 </div>
               </div>
 
