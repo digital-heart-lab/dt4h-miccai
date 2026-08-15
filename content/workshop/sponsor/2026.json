@@ -10,6 +10,11 @@
       "name": "SIG-Cardiac",
       "logo": "/images/sponsors/SIG-Cardiac.png",
       "url": "https://miccai.org/index.php/special-interest-groups/sig-cardiac/"
+    },
+    {
+      "name": "NVIDIA",
+      "logo": "/images/sponsors/nvidia.jpg",
+      "url": "https://www.nvidia.com/"
     }
   ],
   "gold": [],
