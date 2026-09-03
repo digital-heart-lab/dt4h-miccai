@@ -16,17 +16,17 @@ jobs:
     steps:
       # 拉取仓库代码
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       # 设置 Node.js 版本
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: 24
+          node-version: 22
 
       # 3. 安装 pnpm
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v6
         with:
           version: 10 # 指定 pnpm 版本
           run_install: false # 我们手动运行安装
