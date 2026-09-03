@@ -63,7 +63,7 @@ export const ProgramScheduleItemSchema = z.object({
 });
 
 export const ProgramPresentationSchema = z.object({
-+  number: z.number(),
+  number: z.number(),
   presenter: z.string(),
   affiliation: z.string(),
   title: z.string(),
