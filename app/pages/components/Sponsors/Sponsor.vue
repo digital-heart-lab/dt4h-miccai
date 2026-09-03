@@ -3,14 +3,7 @@ import type { Sponsor } from '~~/shared/schemas/person';
 
 defineProps<{
   sponsor: Sponsor
-  tier?: 'platinum' | 'gold' | 'supporting'
 }>()
-
-const tierSizes = {
-  platinum: 'h-[100px]',
-  gold: 'h-[80px]',
-  supporting: 'h-[60px]'
-}
 </script>
 
 <template>
@@ -21,7 +14,7 @@ const tierSizes = {
                 group-hover:border-[rgba(30,110,241,0.2)]
                 transition-all duration-500">
       <img :src="sponsor.logo"
-        :class="['object-contain transition-transform duration-500 group-hover:scale-105', tierSizes[tier || 'gold']]">
+        class="h-[80px] object-contain transition-transform duration-500 group-hover:scale-105">
     </div>
   </a>
 </template>

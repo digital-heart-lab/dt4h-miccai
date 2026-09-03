@@ -22,10 +22,6 @@ const topics = [
 
     <div class="max-w-7xl mx-auto relative z-10">
       <div class="reveal mb-20">
-        <div class="flex items-center gap-3 mb-5">
-          <div class="w-8 h-[2px] bg-gradient-to-r from-[#1E6EF1] to-[#60A5FA] rounded-full"></div>
-          <div class="font-mono-label text-[#1E6EF1]">Research Scope</div>
-        </div>
         <h2 class="font-['Space_Grotesk'] text-[clamp(2.5rem,4.5vw,3.5rem)] font-semibold text-[#0B0C0F] leading-tight">
           Topics
         </h2>

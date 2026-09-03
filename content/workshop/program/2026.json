@@ -1,0 +1,122 @@
+{
+  "year": 2026,
+  "date": "27 September 2026",
+  "venue": "Strasbourg, France",
+  "room": "",
+  "schedule": [
+    {
+      "time": "13:30 - 13:40",
+      "activity": "Opening Remarks"
+    },
+    {
+      "time": "13:40 - 14:20",
+      "activity": "Keynote 1",
+      "speaker": "Prof. Sebastian Kozerke",
+      "talkTitle": "From Spins to Images to Digital Twins and Back Again"
+    },
+    {
+      "time": "14:20 - 15:10",
+      "activity": "Oral Session 1",
+      "detail": "Session Chair: Xuan Yang"
+    },
+    {
+      "time": "15:10 - 15:20",
+      "activity": "Sponsor Session"
+    },
+    {
+      "time": "15:20 - 16:00",
+      "activity": "Poster Session / Break"
+    },
+    {
+      "time": "16:00 - 16:40",
+      "activity": "Keynote 2",
+      "speaker": "Prof. Viktor Jirsa",
+      "talkTitle": "From Brain Maps to Brain Twins"
+    },
+    {
+      "time": "16:40 - 17:30",
+      "activity": "Oral Session 2",
+      "detail": "Session Chair: Tran Anh Vu"
+    },
+    {
+      "time": "17:30 - 17:50",
+      "activity": "Discussion / Awards / Closing"
+    }
+  ],
+  "oralSessions": [
+    {
+      "title": "Oral Session 1",
+      "time": "14:20 - 15:10",
+      "chair": "Xuan Yang",
+      "presentations": [
+        {
+          "number": 1,
+          "presenter": "Leen Houri",
+          "affiliation": "TUM, Germany",
+          "title": "Toward Oncology Digital Twins: Leveraging LLMs for Automated Longitudinal Data Ingestion in Ovarian Cancer Care"
+        },
+        {
+          "number": 2,
+          "presenter": "Johannes Textor",
+          "affiliation": "RU, Netherlands",
+          "title": "Cohort-Level Twinning in an Agent-Based Model of Metastatic Tumor Growth"
+        },
+        {
+          "number": 3,
+          "presenter": "Hendrik Möller",
+          "affiliation": "TUM, Germany",
+          "title": "VERPEX: Anatomical Landmark Extraction on 3D Vertebrae exploiting Segmentation Masks"
+        },
+        {
+          "number": 4,
+          "presenter": "Tian Zhen",
+          "affiliation": "PolyU, China",
+          "title": "PanOCT: A Unified Whole-Eye OCT Reconstruction Framework for Ocular Digital Twin Construction"
+        },
+        {
+          "number": 5,
+          "presenter": "Chih-Wei Chang",
+          "affiliation": "Emory, USA",
+          "title": "Anticipatory Digital Twins for Online Head-and-Neck Adaptive Proton Therapy via Foundation-Model Registration"
+        }
+      ]
+    },
+    {
+      "title": "Oral Session 2",
+      "time": "16:40 - 17:30",
+      "chair": "Tran Anh Vu",
+      "presentations": [
+        {
+          "number": 6,
+          "presenter": "Miao Zhao",
+          "affiliation": "QMUL, UK",
+          "title": "Improving Anatomical Continuity in Synthetic Left Atrial LGE-MRI Using Inter-Slice Attention"
+        },
+        {
+          "number": 7,
+          "presenter": "Seonaeng Cho",
+          "affiliation": "Yonsei, South Korea",
+          "title": "Automatic Patient-Specific Microwave Ablation Planning Accelerated by a Physics-Guided Deep Learning Model"
+        },
+        {
+          "number": 8,
+          "presenter": "Prateek Mathur",
+          "affiliation": "UCD, Ireland",
+          "title": "From Treatment Choices to Tumour Trajectories: Proof-of-Concept in Preference-Aware Agentic Simulation for DT"
+        },
+        {
+          "number": 9,
+          "presenter": "Mathias Unberath",
+          "affiliation": "JHU, USA",
+          "title": "Patient-Specific Articulated Digital Twins from a Single Full-Body CT Scan"
+        },
+        {
+          "number": 10,
+          "presenter": "Sungman Hong",
+          "affiliation": "KU, South Korea",
+          "title": "A Digital Twin Framework for ICU Delirium Using SAITS-Based Patient State Embeddings"
+        }
+      ]
+    }
+  ]
+}

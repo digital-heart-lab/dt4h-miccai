@@ -22,10 +22,6 @@ defineProps<{
     <div class="max-w-7xl mx-auto relative z-10">
       <div class="grid xl:grid-cols-[0.8fr_2.2fr] gap-10 items-center">
         <div class="reveal-left">
-          <div class="flex items-center gap-3 mb-5">
-            <div class="w-8 h-[2px] bg-gradient-to-r from-[#1E6EF1] to-[#60A5FA] rounded-full"></div>
-            <div class="font-mono-label text-[#60A5FA]">Schedule</div>
-          </div>
           <h2 class="font-['Space_Grotesk'] text-[clamp(2.5rem,4.5vw,3.5rem)] font-semibold text-[#F4F6FB] mb-5 leading-tight">
             Key Dates
           </h2>

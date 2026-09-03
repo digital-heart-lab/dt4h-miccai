@@ -1,0 +1,133 @@
+{
+  "year": 2026,
+  "papers": [
+    {
+      "title": "An AI-Driven Pulsation Method of pVADs for Cardiac Digital Twins",
+      "authors": "Chaoran E, Chenghan Chen, Kaijie Qi, Tiefeng Cheng, Haiy Wang, Weiqing Xiong, Liuying Wang, Gezheng Zhao, Ziyu Liu, Qikai Hao, Yue Qiu"
+    },
+    {
+      "title": "A High-Fidelity Cardiac Digital Twin for Assessing Rate-Dependent Responses: A Comparative Multi-scale Study of TT2 and Tomek Models in Stratified 3D Ventricles",
+      "authors": "Zhenyin Fu, Zhaokai Kong, Lucheng Xu, Mingfeng Jiang, Ling Xia, Wenlong Xu, Ruiqing Dong, Dongdong Deng"
+    },
+    {
+      "title": "Learning Cardiac Electrophysiology Digital Twins Through Agentic Discovery of Hybrid Structure",
+      "authors": "Ziqi Zhou, Yubo Ye, Sumeet Atul Vadhavka, Linwei Wang, Zhiqiang Tao"
+    },
+    {
+      "title": "Improving Anatomical Continuity in Synthetic Left Atrial LGE-MRI Using Inter-Slice Attention",
+      "authors": "Miao Zhao, Shibo Li, Xu Chen, Sayed Al-Aidarous, Shohreh Honarbakhsh, Venet Osmani, Gregory Slabaugh, Caroline Roney"
+    },
+    {
+      "title": "When Measurement Conventions Masquerade as Calibration Gains in Cardiac Digital Twins",
+      "authors": "Dang P. M. Cao, Hieu Pham"
+    },
+    {
+      "title": "Rapid Electrophysiology Simulation and Inverse Optimization based on Multi-Task Surrogate Modeling for Cardiac Digital Twins",
+      "authors": "Yilin Lyu, Mengxiao Wang, Dongcheng Cang, Tran Anh Vu, Julia Camps, Ching-Hui Sia, Mark Y. Chan, Lei Li"
+    },
+    {
+      "title": "Region-Aware Temporal Super-Resolution for Interventional X-ray Imaging",
+      "authors": "Yusongjia Zhang, Xingyao Wang, Xiuyu Qi, Chang Cui, Weizhu Ju, Lei Li"
+    },
+    {
+      "title": "Sex-specific signatures in cardiac anatomy and function in CMR-Derived Biventricular Digital-Twins",
+      "authors": "Stefano Buoso, Valery L. Visser, Pia Leuders, Maximilian Fuetterer, Christina Spengler, Sebastian Kozerke"
+    },
+    {
+      "title": "PedDiffusion: Multi-scale wavelet packet conditional diffusion for pediatric 12 leads ECG reconstruction from a single lead",
+      "authors": "Tan Anh Nguyen, Hyungmin Jun"
+    },
+    {
+      "title": "Automatic Patient-Specific Microwave Ablation Planning Accelerated by a Physics-Guided Deep Learning Model",
+      "authors": "Seonaeng Cho, Minjee Seo, Minju Seol, Juil Park, Joon Ho Kwon, Kyungho Yoon"
+    },
+    {
+      "title": "Few-shot Deep Learning for Phase-Amplitude Aberration Correction in Transcranial Focused Ultrasound",
+      "authors": "Minju Seol, Minjee Seo, Seonaeng Cho, Kyungho Yoon"
+    },
+    {
+      "title": "tFUSOperator: Operator Learning for Transcranial Focused Ultrasound Digital Twins",
+      "authors": "Minjee Seo, Haris Ghafoor, Minju Seol, Seonaeng Cho, Kyungho Yoon"
+    },
+    {
+      "title": "PPIM: Pennes Physics-Informed Mamba for Heat-Source-Conditioned 3D Bioheat Simulation",
+      "authors": "Dongyun Lee, Kyungho Yoon, Minwoo Shin"
+    },
+    {
+      "title": "Anticipatory Digital Twins for Online Head-and-Neck Adaptive Proton Therapy via Foundation-Model Registration",
+      "authors": "Yizhou Wu, Yuheng Li, Xiaofeng Yang, Chih-Wei Chang"
+    },
+    {
+      "title": "Modeling Progression of Microwave Ablation Volumes by Neural Surrogates",
+      "authors": "Michael Holtz, Frankangel Servin, Jon S. Heiselman, Michael I. Miga, Linwei Wang"
+    },
+    {
+      "title": "Learning Temperature-Dependent Properties in Cryoablation with Differentiable Physics",
+      "authors": "Raunak Samanta, Adarsh Raghunath, Chloé Audigier, Teodor Ionut Matei, Oliver Frings, Andreas Maier, Felix Meister"
+    },
+    {
+      "title": "Towards surgical digital twins: a soft-tissue phantom study on stiffness-ratio calibration for AR-guided interventions",
+      "authors": "Amaia Iribar-Zabala, Laura Pérez-Sánchez, Marcos Garro-Tejerina, Javier Pascau, Andoni Beristain-Iraola, Mónica García-Sevilla"
+    },
+    {
+      "title": "3D Computational Modeling of the Vascular Heat-Sink Effect in Microwave Ablation of Tumors Close to the Aorta",
+      "authors": "Youjin Kim, Kyungho Yoon, Minwoo Shin"
+    },
+    {
+      "title": "VERPEX: Anatomical Landmark Extraction on 3D Vertebrae exploiting Segmentation Masks",
+      "authors": "Hendrik Möller, Alissa Yuxuan Wang, Robert Graf, Kati Nispel, Matan Atad, Bjoern Menze, Daniel Rueckert, Jan S. Kirschke, Tanja Lerchl"
+    },
+    {
+      "title": "3D Digital Twin Visualization of Multiclass GRF-Based Gait Disorder Classification",
+      "authors": "Nayoung Son, Minwoo Shin"
+    },
+    {
+      "title": "Physics-Guided Synthetic High-Frequency Ultrasound Generation for Skin Layer Segmentation",
+      "authors": "Junkyung Ju, Kyungho Yoon, Minwoo Shin"
+    },
+    {
+      "title": "PanOCT: A Unified OCT-based Whole-Eye Reconstruction Framework for Ocular Digital Twin Construction",
+      "authors": "Zhen Tian, Shiran Zhang, Beiqi Chen, Mingguang He"
+    },
+    {
+      "title": "Patient-Specific Articulated Digital Twins from a Single Full-Body CT Scan",
+      "authors": "Han Zhang, Boyang Zhao, Mathias Unberath"
+    },
+    {
+      "title": "From PACS to Morphometrics: A Hospital-Integrated Workflow for Hip Digital Twin Research",
+      "authors": "John Garcia-Henao, Norman Juchler, Cindy Guerrero-Toro, Nicholas Bünger, Benedikt Herzog, Benjamin Vella, Dominik Kunz, Armando Hoch, Sven Hirsch, Sebastiano Caprara"
+    },
+    {
+      "title": "From Treatment Choices to Tumour Trajectories: Proof-of-Concept in Preference-Aware Agentic Simulation for Digital Twins",
+      "authors": "Prateek Mathur, Aonghus Lawlor, Brendan S. Kelly"
+    },
+    {
+      "title": "Observation-Anchored Selective Assimilation for Longitudinal Tumor-State Proxy Forecasting in Post-Treatment Glioma",
+      "authors": "Yeonjae Jung, Minwoo Shin"
+    },
+    {
+      "title": "Cohort-Level Twinning in an Agent-Based Model of Metastatic Tumor Growth",
+      "authors": "Jan Schering, Lin Wouters, Inge Wortel, Johannes Textor"
+    },
+    {
+      "title": "Toward Oncology Digital Twins: Leveraging LLMs for Automated Longitudinal Data Ingestion in Ovarian Cancer Care",
+      "authors": "Leen Houri, Natyra Tahiri, Gaspar Voelker, Elina Arlanch, Marie Koechert, Jonatan Frank, Leonid Kuligin, Jannik Lübberstedt, Keno Bressem, Martin Boeker, Maximilian Tschochohei, Jacqueline Lammert"
+    },
+    {
+      "title": "Beyond Predictive Modeling: Toward Causal Digital Twins for Personalized Healthcare",
+      "authors": "Avery Shuo Wang, Zheng Wei, Jiaxin Liu, Yiwei Dong, Wansi Deng, Xueli Zhang, Xianwen Shang, Xin Zhou, Mingguang He, Jing Zhang"
+    },
+    {
+      "title": "PolyAge-DT: Missingness-Aware Multimodal Representation Learning for Aging Digital Twins",
+      "authors": "Jiaxin Liu, Zheng Wei, Avery Shuo Wang, Yiwei Dong, Wansi Deng, Xianwen Shang, Xin Zhou, Xueli Zhang, Mingguang He, Jing Zhang"
+    },
+    {
+      "title": "Population-to-Personal Networks as an Interpretable Foundation for Multi-omics-Driven Health Digital Twins",
+      "authors": "Zheng Wei, Jiaxin Liu, Avery Shuo Wang, Yiwei Dong, Wansi Deng, Xueli Zhang, Xianwen Shang, Xin Zhou, Mingguang He, Jing Zhang"
+    },
+    {
+      "title": "A Digital Twin Framework for ICU Delirium Using SAITS-Based Patient State Embeddings",
+      "authors": "Sung man Hong, Sangjeong Ahn"
+    }
+  ]
+}

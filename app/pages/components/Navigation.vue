@@ -74,7 +74,7 @@ function scrollTo(id: string) {
         </span>
       </div>
 
-      <div class="hidden md:flex items-center gap-1">
+      <div class="hidden lg:flex items-center gap-1">
         <button v-for="item in navs" @click="navTo(item)"
           class="text-sm text-[#A6ACB8] hover:text-[#F4F6FB] transition-all duration-300 px-4 py-2 rounded-full hover:bg-[rgba(244,246,251,0.05)]">
           {{ item.label }}
@@ -82,7 +82,8 @@ function scrollTo(id: string) {
       </div>
 
       <button @click="toggleMobileMenu"
-        class="md:hidden relative z-[60] w-[40px] h-[40px] flex flex-col justify-center items-center rounded-full hover:bg-[rgba(244,246,251,0.05)] transition-colors duration-300">
+        aria-label="Toggle navigation menu" :aria-expanded="mobileMenuOpen" aria-controls="mobile-navigation-menu"
+        class="lg:hidden relative z-[60] w-[40px] h-[40px] flex flex-col justify-center items-center rounded-full hover:bg-[rgba(244,246,251,0.05)] transition-colors duration-300">
         <span
           :class="`block w-5 h-[2px] bg-white transition-all duration-300 origin-center ${mobileMenuOpen ? 'rotate-45 translate-y-[6px]' : ''}`"></span>
         <span
@@ -92,8 +93,8 @@ function scrollTo(id: string) {
       </button>
     </div>
 
-    <div
-      :class="`fixed inset-0 top-[62px] z-40 md:hidden transition-all duration-500 ${mobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'}`">
+    <div id="mobile-navigation-menu"
+      :class="`fixed inset-0 top-[62px] z-40 lg:hidden transition-all duration-500 ${mobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'}`">
       <div class="absolute inset-0 bg-[#0B0C0F]/98 backdrop-blur-xl" @click="closeMobileMenu"></div>
       <div
         :class="`absolute top-0 left-0 right-0 bg-[#0B0C0F] border-b border-[rgba(244,246,251,0.08)] transform transition-transform duration-500 ease-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`">

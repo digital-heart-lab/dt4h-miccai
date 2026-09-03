@@ -17,11 +17,6 @@ defineProps<{
 
     <div class="max-w-5xl mx-auto relative z-10">
       <div class="reveal mb-12 md:mb-14 text-center">
-        <div class="flex items-center justify-center gap-3 mb-5">
-          <div class="h-[1px] w-12 bg-gradient-to-r from-transparent to-[#1E6EF1]/30"></div>
-          <div class="font-mono-label text-[#1E6EF1]">Programme</div>
-          <div class="h-[1px] w-12 bg-gradient-to-l from-transparent to-[#1E6EF1]/30"></div>
-        </div>
         <h2 class="font-['Space_Grotesk'] text-[clamp(2.5rem,4.5vw,3.5rem)] font-semibold text-[#0B0C0F] leading-tight">
           Keynote Speakers
         </h2>

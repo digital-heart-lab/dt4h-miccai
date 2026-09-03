@@ -3,6 +3,8 @@ import { ArrowRight, Award, BarChart3, BookOpen, Calendar, CalendarDays, CheckCi
 import Navigation from '../../components/Navigation.vue'
 import KeyDates from '../../components/KeyDates.vue'
 import Keynotes from '../../components/Keynotes/Index.vue'
+import AcceptedPapers from '../../components/AcceptedPapers/Index.vue'
+import Program from '../../components/Program/Index.vue'
 import Committee from '../../components/Committee/Index.vue'
 import useAnimation from '~/pages/composables/useAnimation'
 import StatusBar from '~/pages/components/StatusBar.vue'
@@ -46,6 +48,9 @@ const navs = [{
 }, {
   label: 'Keynotes',
   id: 'keynotes'
+}, {
+  label: 'Program',
+  id: 'program'
 }, {
   label: 'Committee',
   id: 'committee'
@@ -257,8 +262,11 @@ useAnimation()
     </div>
     <CallForPapers v-if="data.paperTemplates?.templates" :paper-tempaltes="data.paperTemplates.templates"
       :cmt-link="data.cmtLink" :paper-requirement-link="data.paperRequirementLink" />
+    <AcceptedPapers v-if="data.acceptedPapers?.papers?.length" :papers="data.acceptedPapers.papers"
+      :year="data.acceptedPapers.year" />
     <KeyDates v-if="data.timeline?.events" :dates="data.timeline.events" />
     <Keynotes v-if="data.keynotes?.keynotes?.length" :keynotes="data.keynotes.keynotes" :year="data.keynotes.year" />
+    <Program v-if="data.program" :data="data.program" />
     <Committee v-if="data.committee" :data="data.committee" />
     <Sponsors v-if="data.sponsors" :sponsors="data.sponsors" />
     <Foot />

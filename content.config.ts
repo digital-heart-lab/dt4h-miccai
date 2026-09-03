@@ -7,6 +7,8 @@ import {
   TimelineSchema,
   PaperTemplateListSchema,
   KeynoteListSchema,
+  AcceptedPaperListSchema,
+  ProgramListSchema,
 } from "./shared/schemas/workshop";
 
 export default defineContentConfig({
@@ -40,6 +42,16 @@ export default defineContentConfig({
       type: "data",
       source: "workshop/keynotes/*.json",
       schema: KeynoteListSchema,
+    }),
+    acceptedPapers: defineCollection({
+      type: "data",
+      source: "workshop/accepted-papers/*.json",
+      schema: AcceptedPaperListSchema,
+    }),
+    program: defineCollection({
+      type: "data",
+      source: "workshop/program/*.json",
+      schema: ProgramListSchema,
     }),
     blog: defineCollection({
       type: "page",
