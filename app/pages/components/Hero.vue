@@ -117,7 +117,7 @@ const viewActive = () => {
                 </div>
                 <div>
                   <div class="font-medium text-[#F4F6FB]">{{ activeEdition.location }}</div>
-                  <div class="text-sm text-[#6B7280]">Bruxelles</div>
+                  <div class="text-sm text-[#6B7280]">Londrezs 1</div>
                 </div>
               </div>
 

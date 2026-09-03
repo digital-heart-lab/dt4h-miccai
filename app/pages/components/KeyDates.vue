@@ -25,9 +25,6 @@ defineProps<{
           <h2 class="font-['Space_Grotesk'] text-[clamp(2.5rem,4.5vw,3.5rem)] font-semibold text-[#F4F6FB] mb-5 leading-tight">
             Key Dates
           </h2>
-          <p class="text-[#6B7280] text-lg">
-            Mark your calendar for important deadlines and workshop dates.
-          </p>
         </div>
 
         <div class="min-w-0">

@@ -2,7 +2,7 @@
   "year": 2026,
   "date": "27 September 2026",
   "venue": "Strasbourg, France",
-  "room": "",
+  "room": "Londrezs 1",
   "schedule": [
     {
       "time": "13:30 - 13:40",
@@ -70,7 +70,7 @@
         {
           "number": 4,
           "presenter": "Tian Zhen",
-          "affiliation": "PolyU, China",
+          "affiliation": "PolyU, Hong Kong",
           "title": "PanOCT: A Unified Whole-Eye OCT Reconstruction Framework for Ocular Digital Twin Construction"
         },
         {
