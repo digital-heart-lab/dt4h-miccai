@@ -33,11 +33,11 @@ The keynote pipeline has three surfaces, each in a slightly mismatched state:
 **Decision 3: Blog post rewrites — keep frontmatter shape, replace body wholesale, change byline to "DT4H 2026 Organizers".**
 - Frontmatter `title` becomes an *announcement* title rather than a *talk* title:
   - Kozerke: `"Announcing Keynote: Prof. Sebastian Kozerke at DT4H 2026"`
-  - Jirsa: `"Announcing Keynote: Prof. Viktor Jirsa Joins DT4H 2026"`
+  - Sorrentino: `"Announcing Keynote: Prof. Pierpaolo Sorrentino Joins DT4H 2026"`
 - Frontmatter `author` becomes `"DT4H 2026 Organizers"` for both posts — a stable, project-level byline so future edits don't need a different person each time. Existing `call-for-papers-2026.mdc` uses an individual organizer's name (Lei Li) but that file is older; we don't backfill it in this change.
-- Body structure (same for both posts, with one variation for Jirsa's `"tbc"` placeholders):
+- Body structure (same for both posts):
   1. **Lead paragraph** — one or two sentences announcing the speaker is joining the DT4H 2026 keynote programme, naming their affiliation and broad research area. This is the "card excerpt" equivalent on the post itself, so readers landing cold have orientation without scrolling.
-  2. **About the talk** — a 1–2 paragraph narrative built from the JSON's `talkAbstract`. We keep the abstract intact as a block but wrap it with a connecting sentence so it doesn't open with bare academic prose. For Jirsa, this section becomes a short "the talk title and abstract will be confirmed closer to the workshop date — check this page for updates" note rather than a fake abstract.
+  2. **About the talk** — a 1–2 paragraph narrative built from the JSON's `talkAbstract`. We keep the abstract intact as a block but wrap it with a connecting sentence so it doesn't open with bare academic prose.
   3. **About the speaker** — built from the JSON's `bio`. We open with a one-line orienting sentence ("Prof. Kozerke brings two decades of research at the intersection of …") and then let the bio paragraphs follow.
   4. **Learn more** — closing block titled "Learn more about Prof. <Surname>" containing the same external link list as before, now framed as references.
 - The keynote JSON (`keynotes/2026.json`) is the *data* source of truth; the blog post is *editorial*. They can diverge in tone (the post can paraphrase and bridge between abstract and bio) but not in fact (the same affiliations, the same links, the same abstract content). Where this change paraphrases, we keep the original abstract paragraph verbatim under "About the talk" so reviewers can still find the exact JSON content quoted in the post.

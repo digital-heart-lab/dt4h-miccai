@@ -115,7 +115,7 @@ For every keynote in `content/workshop/keynotes/<year>.json` that has a `talkAbs
 
 #### Scenario: 2026 keynote posts exist
 - **WHEN** the repo is checked out
-- **THEN** `content/blog/keynote-2026-kozerke.mdc` and `content/blog/keynote-2026-jirsa.mdc` exist
+- **THEN** `content/blog/keynote-2026-kozerke.mdc` and `content/blog/keynote-2026-sorrentino.mdc` exist
 - **AND** each file passes the blog collection's frontmatter schema (`date`, `author`)
 
 #### Scenario: Card links to the blog post
@@ -137,13 +137,12 @@ The homepage hero card ("Workshop Details") SHALL display, in its "Keynotes" sta
 
 ### Requirement: 2026 keynote content provisioned
 
-The repository SHALL include `content/workshop/keynotes/2026.json` containing entries for the confirmed 2026 keynote speakers (Sebastian Kozerke and Viktor Jirsa) with the fields available from `docs/keynotes.md`. Fields that are still "to be confirmed" SHALL be stored as the literal string `"tbc"` so they round-trip without schema changes.
+The repository SHALL include `content/workshop/keynotes/2026.json` containing entries for the confirmed 2026 keynote speakers (Sebastian Kozerke and Pierpaolo Sorrentino) with the fields available from `docs/keynotes.md`.
 
 #### Scenario: Kozerke entry is complete
 - **WHEN** `content/workshop/keynotes/2026.json` is loaded
 - **THEN** the entry for Sebastian Kozerke includes `name`, `affil` (ETH Zurich / University of Zurich), `topic` (his talk title), `website`, `talkTitle`, `talkAbstract`, `bio`, and `links`
 
-#### Scenario: Jirsa entry uses tbc placeholders
+#### Scenario: Sorrentino entry is complete
 - **WHEN** `content/workshop/keynotes/2026.json` is loaded
-- **THEN** the entry for Viktor Jirsa includes `name`, `affil`, `website`, and `bio`
-- **AND** `talkTitle` and `talkAbstract` are the literal string `"tbc"`
+- **THEN** the entry for Pierpaolo Sorrentino includes `name`, `affil`, `topic` (his talk title), `website`, `talkTitle`, `talkAbstract`, `bio`, `links`, and `avatar`

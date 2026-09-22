@@ -64,7 +64,7 @@ The blog body SHALL read as a self-contained announcement article rather than a 
 
 #### Scenario: 2026 keynote posts exist and conform
 - **WHEN** the repo is checked out
-- **THEN** `content/blog/keynote-2026-kozerke.mdc` and `content/blog/keynote-2026-jirsa.mdc` exist
+- **THEN** `content/blog/keynote-2026-kozerke.mdc` and `content/blog/keynote-2026-sorrentino.mdc` exist
 - **AND** each file passes the blog collection's frontmatter schema (`date`, `author`)
 - **AND** each `author` equals `"DT4H 2026 Organizers"`
 

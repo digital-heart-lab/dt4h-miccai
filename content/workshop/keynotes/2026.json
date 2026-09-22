@@ -17,18 +17,18 @@
       ]
     },
     {
-      "name": "Prof. Viktor Jirsa",
-      "affil": "Aix-Marseille Université, Institut de Neurosciences des Systèmes",
-      "avatar": "/images/avatars/Round-Jirsa-V.jpg",
-      "topic": "From Brain Maps to Brain Twins",
-      "website": "https://ins-amu.fr/jirsaviktor",
-      "talkTitle": "From Brain Maps to Brain Twins",
-      "talkAbstract": "Over the past two decades, neuroimaging has transformed how we describe the brain, yielding ever-richer maps of structure, function, and connectivity. Yet description alone does not explain, and the questions we increasingly face are mechanistic and individual: why does this brain generate these seizures, and what will this intervention do?\n\nVirtual brain twins address this gap by augmenting empirical brain maps with generative mechanism. Epistemically, a digital brain twin is neither a simulation nor a statistical model alone, but a coupling between three elements: (i) a personalized referent — the individual brain, characterized through multimodal imaging; (ii) a generative mechanistic brain model, expressing network activity on the subject's connectome; and (iii) a bidirectional inference loop linking the two, inverting the model against individual data to estimate latent parameters with quantified uncertainty. I illustrate the workflow through the Virtual Epileptic Patient (VEP), developed for drug-resistant focal epilepsy. The connectome is reconstructed from DTI and co-registered with anatomical MRI and CT; region-specific neural mass models are placed on this connectome; and epileptogenicity of a brain region is estimated by Bayesian inversion using Hamiltonian Monte Carlo. The inference yields full posteriors and inference diagnostics, essential where neurosurgical decisions are irreversible. VEP has just finished prospective clinical evaluation (EPINOV).",
-      "bio": "Viktor Jirsa is Director of the Inserm Institut de Neurosciences des Systèmes at Aix-Marseille-Université in Marseille, France. Dr. Jirsa received his PhD in 1996 in Theoretical Physics and has since then contributed to the field of Theoretical Neuroscience through the development of large-scale brain network models based on realistic connectivity. His work has been foundational for network science in brain medicine and the use of personalized virtual brain models in epilepsy. He is Scientific Director of the clinical trial EPINOV, evaluating the use of virtual brain technology in epilepsy surgery. Dr. Jirsa serves as Chief Science Officer of the European digital neuroscience infrastructure EBRAINS and Coordinator of the Virtual Brain Twin consortium. He has been awarded several international prizes for his research including the first HBP Innovation prize (2021) and has published more than 200 scientific articles.",
+      "name": "Prof. Pierpaolo Sorrentino",
+      "affil": "Institut de Neurosciences des Systèmes, Inserm & Aix-Marseille University",
+      "avatar": "/images/avatars/Pierpaolo-Sorrentino.jpeg",
+      "topic": "Towards Digital Twins in Neurodegeneration: From Brain Dynamics to Personalized Medicine",
+      "website": "https://ins-amu.fr/staff-gallery/sorrentino-p",
+      "talkTitle": "Towards Digital Twins in Neurodegeneration: From Brain Dynamics to Personalized Medicine",
+      "talkAbstract": "Computational models are increasingly becoming mechanistic frameworks that link biological processes with clinical observations. In this talk, I will discuss how mechanistic whole-brain computational models can infer latent physiological alterations directly from electrophysiological recordings, providing quantitative biomarkers inaccessible to conventional analyses. Drawing on recent work, I will illustrate how personalized models might capture disease-specific alterations, for example in terms of neural excitability, conduction delays, or the effect of drugs, offering mechanistic explanations for clinical heterogeneity and disease progression. I will give examples for multiple diseases. Finally, I will discuss the emerging concept of the digital twin: individualized computational representations of patients that integrate multimodal data to improve prediction of clinically relevant features and ultimately enable precision neurology.",
+      "bio": "Pierpaolo Sorrentino, MD, PhD, is a Principal Investigator at the Institut de Neurosciences des Systèmes (Inserm and Aix-Marseille University, France). He is a board-certified neurologist and holds a Ph.D. in Engineering. He subsequently worked as a postdoctoral researcher within the Human Brain Project, where he developed computational approaches to investigate large-scale brain dynamics, with a focus on neurodegenerative diseases. His research has made extensive use of magnetoencephalography (MEG) to characterize functional brain networks and identify electrophysiological biomarkers, specifically in the context of critical dynamics. More recently, his group has focused on mechanistic whole-brain modeling, integrating electrophysiology, neuroimaging, and network science to infer latent physiological mechanisms underlying neurological diseases. His work has contributed to personalized computational models of Parkinson's disease, multiple sclerosis, amyotrophic lateral sclerosis, and other brain disorders, with the long-term goal of developing clinically actionable digital twins for diagnosis, prognosis, and treatment optimization. He has authored 200 peer-reviewed scientific publications.",
       "links": [
-        "https://www.linkedin.com/in/viktor-jirsa-2518b123a/",
-        "https://pubmed.ncbi.nlm.nih.gov/?term=Jirsa+V&cauthor_id=36972720",
-        "https://www.virtualbraintwin.eu/"
+        "https://www.linkedin.com/in/pierpaolo-sorrentino-330221283/",
+        "https://orcid.org/0000-0002-9556-9800",
+        "https://pubmed.ncbi.nlm.nih.gov/?term=%220000-0002-9556-9800%22%5BAuthor%20Identifier%5D"
       ]
     }
   ]

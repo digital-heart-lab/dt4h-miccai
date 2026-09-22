@@ -8,12 +8,12 @@
 
 - [x] 2.1 `content/blog/keynote-2026-kozerke.mdc` rewritten: announcement-style title, `DT4H 2026 Organizers` byline, lead paragraph, "About the talk" with quoted abstract, "About the speaker" with orienting sentence + bio paragraphs, "Learn more about Prof. Kozerke" references block.
 
-## 3. Blog post — Viktor Jirsa
+## 3. Blog post — Pierpaolo Sorrentino
 
-- [x] 3.1 `content/blog/keynote-2026-jirsa.mdc` rewritten: announcement-style title, `DT4H 2026 Organizers` byline, lead paragraph, "About the talk" with a "to be confirmed" note framed by his expected scope, "About the speaker" with orienting sentence + bio paragraphs, "Learn more about Prof. Jirsa" references block.
+- [x] 3.1 `content/blog/keynote-2026-sorrentino.mdc` rewritten: announcement-style title, `DT4H 2026 Organizers` byline, lead paragraph, "About the talk" with the supplied synopsis, "About the speaker" with the supplied bio, and a "Learn more about Prof. Sorrentino" references block.
 
 ## 4. Verify
 
 - [x] 4.1 `pnpm build` clean — content schema validates and no TS errors.
 - [ ] 4.2 Manual visual check on `/workshops/2026` — defer to user (no browser in this env).
-- [ ] 4.3 Manual visual check on `/blog/keynote-2026-kozerke` and `/blog/keynote-2026-jirsa` — defer to user.
+- [ ] 4.3 Manual visual check on `/blog/keynote-2026-kozerke` and `/blog/keynote-2026-sorrentino` — defer to user.
