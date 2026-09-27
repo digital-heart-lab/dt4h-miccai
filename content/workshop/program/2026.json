@@ -1,7 +1,9 @@
 {
   "year": 2026,
   "date": "27 September 2026",
-  "venue": "Strasbourg, France",
+  "venue": "Palace of Music and Congresses",
+  "address": "Palais des Congrès, Place de Bordeaux, 67000 Strasbourg, France",
+  "mapsUrl": "https://maps.app.goo.gl/tqcVqLNfLc9b868E9",
   "room": "Londrezs 1",
   "schedule": [
     {

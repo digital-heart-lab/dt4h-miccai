@@ -115,9 +115,18 @@ const viewActive = () => {
                   class="w-10 h-10 rounded-xl bg-[#1E6EF1]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#1E6EF1]/20 transition-colors duration-300">
                   <MapPin class="text-[#60A5FA]" :size="20" />
                 </div>
-                <div>
-                  <div class="font-medium text-[#F4F6FB]">{{ activeEdition.location }}</div>
-                  <div class="text-sm text-[#6B7280]">Londrezs 1</div>
+                <div class="min-w-0">
+                  <div class="font-medium text-[#F4F6FB]">
+                    {{ activeEdition.program?.venue ?? activeEdition.location }}
+                  </div>
+                  <a v-if="activeEdition.program?.address && activeEdition.program.mapsUrl"
+                    :href="activeEdition.program.mapsUrl" target="_blank" rel="noopener noreferrer"
+                    class="mt-1 block text-sm leading-relaxed text-[#A6ACB8] underline decoration-[#60A5FA]/50 underline-offset-2 hover:text-[#60A5FA] transition-colors duration-300">
+                    {{ activeEdition.program.address }}
+                  </a>
+                  <div v-if="activeEdition.program?.room" class="mt-1 text-sm text-[#6B7280]">
+                    {{ activeEdition.program.room }}
+                  </div>
                 </div>
               </div>
 

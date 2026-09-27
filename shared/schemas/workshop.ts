@@ -80,6 +80,8 @@ export const ProgramListSchema = z.object({
   year: z.number(),
   date: z.string(),
   venue: z.string(),
+  address: z.string().optional(),
+  mapsUrl: z.string().optional(),
   room: z.string().optional(),
   schedule: z.array(ProgramScheduleItemSchema),
   oralSessions: z.array(ProgramOralSessionSchema),
