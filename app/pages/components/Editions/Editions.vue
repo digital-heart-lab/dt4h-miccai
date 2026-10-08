@@ -3,9 +3,6 @@ import { BookOpen, Calendar, ExternalLink, FileText, Globe, MapPin, Play } from 
 import StatusBar from '../StatusBar.vue';
 
 const { data: workshops } = await useAsyncData(() => getWorkshops())
-const viewDetail = (year: number) => {
-  navigateTo(`/workshops/${year}`)
-}
 
 </script>
 <template>
@@ -19,7 +16,7 @@ const viewDetail = (year: number) => {
       <div class="reveal mb-20">
         <h2
           class="font-['Space_Grotesk'] text-[clamp(2.5rem,4.5vw,3.5rem)] font-semibold text-[#F4F6FB] mb-5 leading-tight">
-          Past Editions
+          All Workshop Editions
         </h2>
         <p class="text-[#6B7280] max-w-2xl text-lg">
           Explore our journey through the years. Each edition brings together researchers,
@@ -55,17 +52,17 @@ const viewDetail = (year: number) => {
                 <div class="grid grid-cols-3 gap-4 mb-5">
                   <div
                     class="text-center p-4 rounded-2xl bg-[#10B981]/5 group-hover:bg-[#10B981]/10 transition-colors duration-300">
-                    <div class="text-2xl font-bold text-[#F4F6FB]">{{ workshop.submissions }}</div>
-                    <div class="text-xs text-[#6B7280] mt-1">Submissions</div>
+                    <div class="text-2xl font-bold text-[#F4F6FB]">{{ workshop.sponsorCount }}</div>
+                    <div class="text-xs text-[#6B7280] mt-1">Sponsors</div>
                   </div>
                   <div
                     class="text-center p-4 rounded-2xl bg-[#10B981]/5 group-hover:bg-[#10B981]/10 transition-colors duration-300">
                     <div class="text-2xl font-bold text-[#F4F6FB]">{{ workshop.accepted }}</div>
-                    <div class="text-xs text-[#6B7280] mt-1">Accepted</div>
+                    <div class="text-xs text-[#6B7280] mt-1">Accepted Papers</div>
                   </div>
                   <div
                     class="text-center p-4 rounded-2xl bg-[#10B981]/5 group-hover:bg-[#10B981]/10 transition-colors duration-300">
-                    <div class="text-2xl font-bold text-[#F4F6FB]">{{ workshop.participants }}</div>
+                    <div class="text-2xl font-bold text-[#F4F6FB]">{{ workshop.participantQualifier }} {{ workshop.participants }}</div>
                     <div class="text-xs text-[#6B7280] mt-1">Participants</div>
                   </div>
                 </div>
@@ -78,11 +75,14 @@ const viewDetail = (year: number) => {
               </div>
 
               <div class="lg:col-span-1 flex flex-col gap-3">
-                <button @click="viewDetail(workshop.year)"
+                <a :href="`/workshops/${workshop.year}/`"
                   class="btn-primary flex items-center justify-center gap-2 text-sm">
                   <BookOpen :size="16" /> View Details
-                </button>
-                <a href="https://link.springer.com/book/10.1007/978-3-032-07694-6" target="_blank"
+                </a>
+                <a v-if="workshop.year === 2026" :href="`/workshops/${workshop.year}/#recap`" class="btn-secondary flex items-center justify-center gap-2 text-sm">
+                  <Play :size="16" /> View Recap
+                </a>
+                <a v-if="workshop.proceedingsLink" :href="workshop.proceedingsLink" target="_blank"
                   rel="noopener noreferrer" class="btn-secondary flex items-center justify-center gap-2 text-sm">
                   <ExternalLink :size="16" /> Proceedings
                 </a>
@@ -116,7 +116,7 @@ const viewDetail = (year: number) => {
 
               <div class="lg:col-span-2">
                 <p class="text-[#6B7280] text-sm leading-relaxed">
-                  Join us for the 2nd DT4H at MICCAI 2026 in {{ workshop.location }}. We look forward to another
+                  Join us for DT4H {{ workshop.year }} at MICCAI {{ workshop.year }} in {{ workshop.location }}. We look forward to another
                   year of groundbreaking research and collaboration.
                 </p>
               </div>
@@ -126,10 +126,10 @@ const viewDetail = (year: number) => {
                   class="btn-primary flex items-center justify-center gap-2 text-sm">
                   <FileText :size="16" /> Submit Paper
                 </a>
-                <button @click="viewDetail(workshop.year)"
+                <a :href="`/workshops/${workshop.year}/`"
                   class="btn-secondary flex items-center justify-center gap-2 text-sm">
                   <Play :size="16" /> Learn More
-                </button>
+                </a>
               </div>
             </div>
           </div>

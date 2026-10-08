@@ -127,6 +127,8 @@ export const WorkshopSchema = z.object({
   accepted: z.number().optional(),
   oralSessions: z.number().optional(),
   participants: z.number().optional(),
+  participantQualifier: z.string().optional(),
+  sponsorCount: z.number().optional(),
   countries: z.number().optional(),
   keynoteSpeakers: z.array(z.string()).optional(),
   bestPapers: z.array(z.string()).optional(),

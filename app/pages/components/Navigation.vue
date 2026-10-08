@@ -19,9 +19,6 @@ const mobileMenuOpen = ref(false)
 const handleScroll = () =>
   scrolled.value = window.scrollY > 100;
 
-const goHome = () => {
-  navigateTo(props.logoUrl || (props.year ? `/workshops/${props.year}` : "/"))
-}
 
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value
@@ -38,28 +35,15 @@ const closeMobileMenu = () => {
 }
 
 onMounted(() => {
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
+  handleScroll()
+  window.addEventListener("scroll", handleScroll)
 })
 
 onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
   document.body.style.overflow = ''
 })
 
-const navTo = (nav: NavItem) => {
-  closeMobileMenu()
-  if (nav.id) {
-    scrollTo(nav.id)
-  } else {
-    navigateTo(nav.url!)
-  }
-}
-
-function scrollTo(id: string) {
-  setTimeout(() => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  }, 100);
-};
 </script>
 
 <template>
@@ -67,23 +51,23 @@ function scrollTo(id: string) {
     :class="`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
       ? 'bg-[#0B0C0F]/85 backdrop-blur-xl border-b border-[rgba(244,246,251,0.06)] shadow-[0_4px_30px_rgba(0,0,0,0.3)]' : 'bg-transparent border-[transparent]'}`">
     <div class="w-full px-[4vw] py-4 flex items-center justify-between">
-      <div class="flex items-center cursor-pointer group" @click="goHome">
-        <img class="h-[40px] object-contain" :src="logo" />
+      <a :href="logoUrl || '/'" aria-label="DT4H series homepage" class="flex items-center group">
+        <img class="h-[40px] object-contain" :src="logo" alt="DT4H" />
         <span class="font-[Space_Grotesk] text-white font-semibold text-xl ml-2.5 tracking-tight">
           {{ name || '' }}
         </span>
-      </div>
+      </a>
 
-      <div class="hidden lg:flex items-center gap-1">
-        <button v-for="item in navs" @click="navTo(item)"
+      <div class="hidden xl:flex items-center gap-1">
+        <a v-for="item in navs" :key="item.label" :href="item.url || `#${item.id}`" @click="closeMobileMenu"
           class="text-sm text-[#A6ACB8] hover:text-[#F4F6FB] transition-all duration-300 px-4 py-2 rounded-full hover:bg-[rgba(244,246,251,0.05)]">
           {{ item.label }}
-        </button>
+        </a>
       </div>
 
       <button @click="toggleMobileMenu"
         aria-label="Toggle navigation menu" :aria-expanded="mobileMenuOpen" aria-controls="mobile-navigation-menu"
-        class="lg:hidden relative z-[60] w-[40px] h-[40px] flex flex-col justify-center items-center rounded-full hover:bg-[rgba(244,246,251,0.05)] transition-colors duration-300">
+        class="xl:hidden relative z-[60] w-[40px] h-[40px] flex flex-col justify-center items-center rounded-full hover:bg-[rgba(244,246,251,0.05)] transition-colors duration-300">
         <span
           :class="`block w-5 h-[2px] bg-white transition-all duration-300 origin-center ${mobileMenuOpen ? 'rotate-45 translate-y-[6px]' : ''}`"></span>
         <span
@@ -94,16 +78,16 @@ function scrollTo(id: string) {
     </div>
 
     <div id="mobile-navigation-menu"
-      :class="`fixed inset-0 top-[62px] z-40 lg:hidden transition-all duration-500 ${mobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'}`">
+      :class="`fixed inset-0 top-[62px] z-40 xl:hidden transition-all duration-500 ${mobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'}`">
       <div class="absolute inset-0 bg-[#0B0C0F]/98 backdrop-blur-xl" @click="closeMobileMenu"></div>
       <div
         :class="`absolute top-0 left-0 right-0 bg-[#0B0C0F] border-b border-[rgba(244,246,251,0.08)] transform transition-transform duration-500 ease-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`">
-        <div class="px-[4vw] py-8 flex flex-col gap-2">
-          <button v-for="(item, index) in navs" @click="navTo(item)"
+        <div class="px-[4vw] py-8 flex flex-col gap-2 max-h-[calc(100dvh-72px)] overflow-y-auto">
+          <a v-for="(item, index) in navs" :key="item.label" :href="item.url || `#${item.id}`" @click="closeMobileMenu"
             class="text-center text-lg text-[#A6ACB8] hover:text-[#F4F6FB] transition-all duration-300 py-3 px-4 rounded-xl hover:bg-[rgba(244,246,251,0.05)] hover:pl-6"
             :style="{ transitionDelay: `${index * 0.05}s` }">
             {{ item.label }}
-          </button>
+          </a>
         </div>
       </div>
     </div>

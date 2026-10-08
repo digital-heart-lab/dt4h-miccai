@@ -1,6 +1,6 @@
 import type { Workshop } from "~~/shared/schemas/workshop";
 
-export async function getWorkshopDetail(year: number): Promise<Workshop> {
+export async function getWorkshopDetail(year: number): Promise<Workshop | null> {
   const [
     overiew,
     committee,
@@ -20,8 +20,9 @@ export async function getWorkshopDetail(year: number): Promise<Workshop> {
     queryCollection("acceptedPapers").where("year", "=", year).first(),
     queryCollection("program").where("year", "=", year).first(),
   ]);
+  if (!overiew) return null;
   return {
-    ...overiew!,
+    ...overiew,
     committee: committee!,
     sponsors: sponsors!,
     timeline: timeline!,

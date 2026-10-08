@@ -4,15 +4,12 @@
     {
       "event": "Abstract Registration",
       "day": "20",
-      "month": "June",
-      "highlight": "revision"
+      "month": "June"
     },
     {
       "event": "Paper Deadline",
-      "day": "20",
-      "month": "June",
-      "revisedDay": "1",
-      "revisedMonth": "July"
+      "day": "1",
+      "month": "July"
     },
     {
       "event": "Reviews Due",

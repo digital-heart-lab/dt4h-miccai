@@ -42,22 +42,10 @@ defineProps<{
                 </div>
                 <div
                   class="font-mono-label text-base text-[#60A5FA] mb-2 group-hover:text-[#93C5FD] transition-colors duration-300">
-                  <template v-if="item.revisedMonth">
-                    <del class="text-[#EF4444] decoration-[#EF4444] decoration-2">{{ item.month }}</del>
-                    <span class="ml-1">{{ item.revisedMonth }}</span>
-                  </template>
-                  <template v-else>
-                    <span :class="item.highlight === 'revision' ? 'text-[#EF4444]' : ''">{{ item.month }}</span>
-                  </template>
+                  {{ item.revisedMonth ?? item.month }}
                 </div>
                 <div class="font-['Space_Grotesk'] font-bold text-2xl text-[#F4F6FB] mb-2 group-hover:scale-110 transition-transform duration-300">
-                  <template v-if="item.revisedDay">
-                    <del class="text-[#EF4444] decoration-[#EF4444] decoration-2">{{ item.day }}</del>
-                    <span class="ml-1">{{ item.revisedDay }}</span>
-                  </template>
-                  <template v-else>
-                    <span :class="item.highlight === 'revision' ? 'text-[#EF4444]' : ''">{{ item.day }}</span>
-                  </template>
+                  {{ item.revisedDay ?? item.day }}
                 </div>
                 <div class="text-xs text-[#6B7280] leading-relaxed">{{ item.event }}</div>
               </div>

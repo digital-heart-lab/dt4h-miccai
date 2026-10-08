@@ -3,24 +3,18 @@ import Navigation from '~/pages/components/Navigation.vue';
 import useAnimation from '~/pages/composables/useAnimation';
 import Foot from './components/foot.vue';
 
+const { data: workshops } = await useAsyncData('edition-navigation', getWorkshops)
+const navs = computed(() => [
+  { label: 'Home', url: '/' },
+  ...(workshops.value ?? []).map(workshop => ({ label: `DT4H ${workshop.year}`, url: `/workshops/${workshop.year}/` })),
+  { label: 'Announcements', url: '/blog' },
+])
 useAnimation()
 </script>
 
 <template>
   <div>
-    <Navigation :navs="[
-      {
-        label: 'DT4H 2026',
-        url: '/workshops/2026'
-      },
-      {
-        label: 'DT4H 2025',
-        url: '/workshops/2025'
-      }, {
-        label: 'Announcements',
-        url: '/blog'
-      }
-    ]" />
+    <Navigation :navs="navs" />
     <slot></slot>
     <Foot />
   </div>

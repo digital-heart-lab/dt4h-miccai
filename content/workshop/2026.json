@@ -6,18 +6,18 @@
     "September",
     "27th"
   ],
-  "status": "ongoing",
+  "status": "completed",
   "submissionDeadline": [
-    "2026",
-    "June",
-    "20th"
-  ],
-  "revisedSubmissionDeadline": [
     "2026",
     "July",
     "1st"
   ],
   "miccaiLink": "https://conferences.miccai.org/2026/en/default.asp",
   "cmtLink": "https://openreview.net/group?id=MICCAI.org/2026/Workshop/DT4H",
-  "paperRequirementLink": "/blog/call-for-papers-2026"
+  "paperRequirementLink": "/blog/call-for-papers-2026",
+  "accepted": 32,
+  "participants": 80,
+  "participantQualifier": ">",
+  "sponsorCount": 2,
+  "countries": 19
 }

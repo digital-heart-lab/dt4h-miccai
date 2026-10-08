@@ -7,7 +7,6 @@
     "23rd"
   ],
   "status": "completed",
-  "submissions": 23,
   "accepted": 15,
   "participants": 70,
   "countries": 17,
@@ -21,5 +20,7 @@
     "A Real-Time Digital Twin for Type 1 Diabetes",
     "Retrospective Evaluation of a Patient-Specific Liver Digital Twin"
   ],
-  "proceedingsLink": "https://link.springer.com/book/10.1007/978-3-032-07694-6"
+  "proceedingsLink": "https://link.springer.com/book/10.1007/978-3-032-07694-6",
+  "sponsorCount": 3,
+  "participantQualifier": ">"
 }

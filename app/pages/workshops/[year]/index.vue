@@ -5,6 +5,7 @@ import KeyDates from '../../components/KeyDates.vue'
 import Keynotes from '../../components/Keynotes/Index.vue'
 import AcceptedPapers from '../../components/AcceptedPapers/Index.vue'
 import Program from '../../components/Program/Index.vue'
+import Recap from '../../components/Recap.vue'
 import Committee from '../../components/Committee/Index.vue'
 import useAnimation from '~/pages/composables/useAnimation'
 import StatusBar from '~/pages/components/StatusBar.vue'
@@ -21,27 +22,28 @@ const route = useRoute()
 const year = Number(route.params.year)
 
 
-if (isNaN(year) || year > 2026 || year < 2025) {
-
+if (!Number.isInteger(year)) {
+  throw createError({ statusCode: 404, statusMessage: 'Page Not Found' })
 }
 if (year === 2025) {
-  location.href = '/workshops/2025'
+  await navigateTo('/workshops/2025/', { external: true, redirectCode: 301 })
 }
 
+const { data: workshops } = await useAsyncData('edition-navigation', getWorkshops)
 const { data } = await useAsyncData(route.path, async () => {
   return getWorkshopDetail(year)
 })
 
 if (!data.value) {
   throw createError({
-    status: 404,
-    statusText: 'Page Not Found',
+    statusCode: 404,
+    statusMessage: 'Page Not Found',
   })
 }
 
 const navs = [{
   label: 'Papers',
-  id: 'call-for-papers'
+  id: data.value?.status === 'completed' ? 'accepted-papers' : 'call-for-papers'
 }, {
   label: 'Timeline',
   id: 'timeline'
@@ -52,6 +54,9 @@ const navs = [{
   label: 'Program',
   id: 'program'
 }, {
+  label: 'Recap',
+  id: 'recap'
+}, {
   label: 'Committee',
   id: 'committee'
 }, {
@@ -61,9 +66,13 @@ const navs = [{
   label: 'Announcements',
   url: '/blog'
 }, {
-  label: 'Home',
+  label: 'Series Home',
   url: '/'
-}]
+}, ...(workshops.value ?? []).filter(workshop => workshop.year !== year).map(workshop => ({
+  label: `DT4H ${workshop.year}`,
+  url: `/workshops/${workshop.year}/`
+}))]
+useHead({ title: `DT4H ${year} | Digital Twin for Healthcare` })
 useAnimation()
 
 
@@ -136,15 +145,15 @@ useAnimation()
       </div>
 
       <div v-if="data.status === 'completed'" class="mb-16 relative z-10">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
           <div class="card-dark p-6 text-center group">
             <div
               class="w-12 h-12 rounded-2xl bg-[#1E6EF1]/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-[#1E6EF1]/20 transition-colors duration-300">
               <BarChart3 class="text-[#60A5FA]" :size="24" />
             </div>
             <div class="text-3xl font-bold text-[#F4F6FB] group-hover:scale-105 transition-transform duration-300">{{
-              data.submissions }}</div>
-            <div class="text-sm text-[#6B7280] mt-1">Submissions</div>
+              data.sponsorCount }}</div>
+            <div class="text-sm text-[#6B7280] mt-1">Sponsors</div>
           </div>
           <div class="card-dark p-6 text-center group">
             <div
@@ -160,19 +169,10 @@ useAnimation()
               class="w-12 h-12 rounded-2xl bg-[#1E6EF1]/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-[#1E6EF1]/20 transition-colors duration-300">
               <Users class="text-[#60A5FA]" :size="24" />
             </div>
-            <div class="text-3xl font-bold text-[#F4F6FB] group-hover:scale-105 transition-transform duration-300">{{
-              data.participants }}</div>
+            <div class="text-3xl font-bold text-[#F4F6FB] group-hover:scale-105 transition-transform duration-300">{{ data.participantQualifier }} {{ data.participants }}</div>
             <div class="text-sm text-[#6B7280] mt-1">Participants</div>
           </div>
-          <div class="card-dark p-6 text-center group">
-            <div
-              class="w-12 h-12 rounded-2xl bg-[#1E6EF1]/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-[#1E6EF1]/20 transition-colors duration-300">
-              <Globe class="text-[#60A5FA]" :size="24" />
-            </div>
-            <div class="text-3xl font-bold text-[#F4F6FB] group-hover:scale-105 transition-transform duration-300">{{
-              data.countries }}</div>
-            <div class="text-sm text-[#6B7280] mt-1">Countries</div>
-          </div>
+
         </div>
       </div>
 
@@ -182,19 +182,11 @@ useAnimation()
             <div class="w-10 h-10 rounded-xl bg-[#1E6EF1]/10 flex items-center justify-center">
               <BookOpen class="text-[#60A5FA]" :size="20" />
             </div>
-            {{ data.status === 'completed' ? 'Best Papers' : 'Call for Papers' }}
+            {{ data.status === 'completed' ? 'Workshop Completed' : 'Call for Papers' }}
           </h3>
           <div v-if="data.status === 'completed'" class="space-y-4">
-            <div v-for="(paper, index) in data.bestPapers" :key="index"
-              class="p-4 rounded-xl bg-[rgba(244,246,251,0.03)] flex items-start gap-3 group hover:bg-[rgba(244,246,251,0.05)] transition-colors duration-300">
-              <Award class="text-[#F59E0B] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300"
-                :size="18" />
-              <span class="text-[#F4F6FB] text-sm leading-relaxed">{{ paper }}</span>
-            </div>
-            <a :href="data.proceedingsLink" target="_blank" rel="noopener noreferrer"
-              class="btn-secondary w-full flex items-center justify-center gap-2 mt-6">
-              <ExternalLink :size="16" /> View All Proceedings
-            </a>
+            <p class="text-[#A6ACB8] leading-relaxed">Thank you to our speakers, authors, participants, and sponsors for making DT4H 2026 in Strasbourg a success. Explore the accepted papers, program, and highlights below.</p>
+            <a href="#recap" class="btn-primary w-full flex items-center justify-center gap-2 mt-6">View the Recap <ArrowRight :size="16" /></a>
           </div>
           <div v-else class="space-y-4">
             <p class="text-[#6B7280] leading-relaxed">
@@ -225,14 +217,16 @@ useAnimation()
             <div class="w-10 h-10 rounded-xl bg-[#1E6EF1]/10 flex items-center justify-center">
               <Gem class="text-[#60A5FA]" :size="20" />
             </div>
-            Call for Sponsors
+            {{ data.status === 'completed' ? 'Thank You to Our Sponsors' : 'Call for Sponsors' }}
           </h3>
           <div class="space-y-4">
-            <p class="text-[#6B7280] leading-relaxed">
+            <p v-if="data.status === 'completed'" class="text-[#A6ACB8] leading-relaxed">Our two sponsors supported a lively afternoon of research exchange and collaboration. Thank you for supporting the DT4H community.</p>
+            <a v-if="data.status === 'completed'" href="#sponsors" class="btn-secondary w-full flex items-center justify-center gap-2 mt-6">View Sponsors</a>
+            <p v-else class="text-[#6B7280] leading-relaxed">
               Support the future of precision healthcare by sponsoring our workshop exploring cutting-edge digital
               twin technology for patient simulation and clinical decision support.
             </p>
-            <a href="mailto:lei.li@nus.edu.sg?subject=Sponsorship%20Interest:%20DT4H%202026" target="_blank"
+            <a v-if="data.status !== 'completed'" href="mailto:lei.li@nus.edu.sg?subject=Sponsorship%20Interest:%20DT4H%202026" target="_blank"
               rel="noopener noreferrer" class="btn-secondary w-full flex items-center justify-center gap-2 mt-6">
               <Mail :size="16" /> Contact Us
             </a>
@@ -240,33 +234,16 @@ useAnimation()
         </div>
       </div>
 
-      <div v-if="data.status === 'completed'" class="max-w-7xl mx-auto mt-8 relative z-10">
-        <div class="card-dark p-8 bg-transparent backdrop-blur-xs">
-          <h3 class="font-['Space_Grotesk'] text-xl font-semibold text-[#F4F6FB] mb-6 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-[#1E6EF1]/10 flex items-center justify-center">
-              <Clock class="text-[#60A5FA]" :size="20" />
-            </div>
-            Program Schedule
-          </h3>
-          <div class="grid md:grid-cols-2 gap-4">
-            <div v-for="(item, index) in data.timeline?.events" :key="index"
-              class="flex items-center gap-4 p-4 rounded-xl bg-[rgba(244,246,251,0.03)] hover:bg-[rgba(244,246,251,0.05)] transition-colors duration-300 group">
-              <div
-                class="font-mono-label text-[#60A5FA] w-16 group-hover:text-[#93C5FD] transition-colors duration-300">{{
-                  item.time }}</div>
-              <div class="text-[#F4F6FB]">{{ item.event }}</div>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </div>
-    <CallForPapers v-if="data.paperTemplates?.templates" :paper-tempaltes="data.paperTemplates.templates"
+    <CallForPapers v-if="data.status !== 'completed' && data.paperTemplates?.templates" :paper-tempaltes="data.paperTemplates.templates"
       :cmt-link="data.cmtLink" :paper-requirement-link="data.paperRequirementLink" />
     <AcceptedPapers v-if="data.acceptedPapers?.papers?.length" :papers="data.acceptedPapers.papers"
       :year="data.acceptedPapers.year" />
     <KeyDates v-if="data.timeline?.events" :dates="data.timeline.events" />
     <Keynotes v-if="data.keynotes?.keynotes?.length" :keynotes="data.keynotes.keynotes" :year="data.keynotes.year" />
     <Program v-if="data.program" :data="data.program" />
+    <Recap v-if="year === 2026 && data.status === 'completed'" />
     <Committee v-if="data.committee" :data="data.committee" />
     <Sponsors v-if="data.sponsors" :sponsors="data.sponsors" />
     <Foot />
