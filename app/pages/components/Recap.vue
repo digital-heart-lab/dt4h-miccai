@@ -48,9 +48,8 @@ const groups = [
   ] },
 ]
 const audiencePhotos = [
-  ['IMG_9875', 'Participants gathered in the DT4H 2026 workshop room in Strasbourg'],
-  ['IMG_9941', 'Attendees following the DT4H 2026 presentations'],
   ['1bb38932401af712adad6f7f20e571c6', 'A packed room at DT4H 2026'],
+  ['IMG_9941', 'Attendees following the DT4H 2026 presentations'],
   ['c9329a500c4f61d550a18de7a24d1c1b', 'Participants standing and sitting on the floor when seats ran out'],
 ]
 const photoPath = (name: string) => `/images/recap/2026/${name}.${name === 'IMG_9959' ? 'jpg' : 'webp'}`
@@ -172,7 +171,7 @@ figcaption { font-size: .8rem; color: #A6ACB8; margin-top: .8rem; line-height: 1
 .recap-photo--landscape { grid-column: auto; }
 .recap-gallery--talks .recap-photo--landscape img { aspect-ratio: 4/3; object-fit: cover; object-position: center bottom; }
 .recap-gallery--talks .recap-photo--brain-keynote img { object-fit: cover; object-position: center; }
-.recap-gallery--audience { grid-template-columns: repeat(4,minmax(0,1fr)); }
+.recap-gallery--audience { grid-template-columns: repeat(3,minmax(0,1fr)); }
 .recap-photo a:hover img { transform: scale(1.025); }
 .recap-photo a:focus-visible, .recap-feature a:focus-visible { outline: 2px solid #60A5FA; outline-offset: 5px; }
 .recap-expand { position: absolute; bottom: 12px; right: 12px; background: #0B0C0Faa; color: white; border-radius: 50%; padding: 8px; }

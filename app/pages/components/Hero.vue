@@ -44,8 +44,7 @@ const editionUrl = computed(() => `/workshops/${latest.value?.year}/`)
             <span><Calendar :size="16" />{{ formatDate(latest.date) }}</span>
             <span><MapPin :size="16" />{{ latest.location }}</span>
           </div>
-          <p v-if="latest.status === 'completed'" class="latest-edition__description">Thank you for joining us at MICCAI {{ latest.year }}. Explore the research, talks, and conversations that brought our community together.</p>
-          <p v-else class="latest-edition__description">Discover the latest workshop’s submission information, key dates, speakers, and program.</p>
+          <p v-if="latest.status !== 'completed'" class="latest-edition__description">Discover the latest workshop’s submission information, key dates, speakers, and program.</p>
           <dl v-if="latest.status === 'completed'" class="latest-edition__stats">
             <div v-if="latest.participants"><dt>Participants</dt><dd>{{ latest.participantQualifier }} {{ latest.participants }}</dd></div>
             <div v-if="latest.accepted"><dt>Accepted papers</dt><dd>{{ latest.accepted }}</dd></div>
@@ -70,19 +69,19 @@ const editionUrl = computed(() => `/workshops/${latest.value?.year}/`)
 .series-hero__intro h1 { font-family: 'Space Grotesk',sans-serif; font-size: clamp(2.8rem,4.8vw,4.7rem); font-weight: 600; line-height: 1.08; letter-spacing: -.035em; color: #F4F6FB; margin-bottom: 24px; }
 .series-hero__description { font-size: 17px; line-height: 1.8; color: #A6ACB8; max-width: 580px; margin-bottom: 30px; }
 .series-hero__actions { display: flex; flex-wrap: wrap; gap: 12px; }
-.latest-edition { min-width: 0; scroll-margin-top: 100px; border: 1px solid rgba(244,246,251,.12); border-radius: 24px; background: rgba(19,21,26,.88); overflow: hidden; box-shadow: 0 24px 64px rgba(0,0,0,.2); }
+.latest-edition { min-width: 0; scroll-margin-top: 100px; border: 1px solid rgba(244,246,251,.12); border-radius: 24px; background: rgba(19,21,26,.45); overflow: hidden; box-shadow: 0 24px 64px rgba(0,0,0,.2); }
 .latest-edition__photo { display: block; overflow: hidden; }
-.latest-edition__photo img { display: block; width: 100%; aspect-ratio: 2.6/1; object-fit: cover; object-position: center 55%; transition: transform .3s; }
+.latest-edition__photo img { display: block; width: 100%; aspect-ratio: 3.8/1; object-fit: cover; object-position: center 72%; transition: transform .3s; }
 .latest-edition__photo:hover img { transform: scale(1.025); }
-.latest-edition__body { padding: 26px 28px 28px; }
-.latest-edition__label { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 14px; }
+.latest-edition__body { padding: 18px 24px 20px; }
+.latest-edition__label { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 10px; }
 .latest-edition__label .font-mono-label { font-size: 11px; }
-.latest-edition h2 { font-family: 'Space Grotesk',sans-serif; font-size: 34px; font-weight: 600; line-height: 1.2; color: #F4F6FB; margin-bottom: 14px; }
+.latest-edition h2 { font-family: 'Space Grotesk',sans-serif; font-size: 34px; font-weight: 600; line-height: 1.2; color: #F4F6FB; margin-bottom: 10px; }
 .latest-edition__meta { display: flex; flex-wrap: wrap; gap: 8px 18px; color: #A6ACB8; font-size: 13px; }
 .latest-edition__meta span { display: inline-flex; align-items: center; gap: 7px; }
 .latest-edition__meta svg { color: #60A5FA; flex-shrink: 0; }
 .latest-edition__description { font-size: 14px; line-height: 1.7; color: #A6ACB8; margin: 18px 0; }
-.latest-edition__stats { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; padding: 18px 0; margin-bottom: 8px; border-top: 1px solid rgba(244,246,251,.08); }
+.latest-edition__stats { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; padding: 14px 0; margin-top: 16px; margin-bottom: 4px; border-top: 1px solid rgba(244,246,251,.08); }
 .latest-edition__stats dt { font-size: 11px; line-height: 1.5; color: #A6ACB8; margin-bottom: 4px; }
 .latest-edition__stats dd { font-size: 28px; font-weight: 600; line-height: 1.3; color: #60A5FA; }
 .latest-edition__actions a { padding: 11px 16px; font-size: 13px; }

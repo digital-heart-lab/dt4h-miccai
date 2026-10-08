@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowRight, Award, BarChart3, BookOpen, Calendar, CalendarDays, CheckCircle, ChevronRight, Clock, DiamondPlus, ExternalLink, FileText, Gem, Globe, Hammer, Mail, MapPin, Rocket, Users } from 'lucide-vue-next'
+import { ArrowRight, Award, Handshake, BookOpen, Calendar, CalendarDays, CheckCircle, ChevronRight, Clock, DiamondPlus, ExternalLink, FileText, Gem, Globe, Hammer, Mail, MapPin, Rocket, Users } from 'lucide-vue-next'
 import Navigation from '../../components/Navigation.vue'
 import KeyDates from '../../components/KeyDates.vue'
 import Keynotes from '../../components/Keynotes/Index.vue'
@@ -65,13 +65,13 @@ const navs = [{
 }, {
   label: 'Announcements',
   url: '/blog'
-}, {
-  label: 'Series Home',
-  url: '/'
 }, ...(workshops.value ?? []).filter(workshop => workshop.year !== year).map(workshop => ({
   label: `DT4H ${workshop.year}`,
   url: `/workshops/${workshop.year}/`
-}))]
+})), {
+  label: 'Home',
+  url: '/'
+}]
 useHead({ title: `DT4H ${year} | Digital Twin for Healthcare` })
 useAnimation()
 
@@ -146,16 +146,16 @@ useAnimation()
 
       <div v-if="data.status === 'completed'" class="mb-16 relative z-10">
         <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-          <div class="card-dark p-6 text-center group">
+          <div class="card-dark workshop-stat-card p-6 text-center group">
             <div
               class="w-12 h-12 rounded-2xl bg-[#1E6EF1]/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-[#1E6EF1]/20 transition-colors duration-300">
-              <BarChart3 class="text-[#60A5FA]" :size="24" />
+              <Handshake class="text-[#60A5FA]" :size="24" />
             </div>
             <div class="text-3xl font-bold text-[#F4F6FB] group-hover:scale-105 transition-transform duration-300">{{
               data.sponsorCount }}</div>
             <div class="text-sm text-[#6B7280] mt-1">Sponsors</div>
           </div>
-          <div class="card-dark p-6 text-center group">
+          <div class="card-dark workshop-stat-card p-6 text-center group">
             <div
               class="w-12 h-12 rounded-2xl bg-[#1E6EF1]/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-[#1E6EF1]/20 transition-colors duration-300">
               <FileText class="text-[#60A5FA]" :size="24" />
@@ -164,7 +164,7 @@ useAnimation()
               data.accepted }}</div>
             <div class="text-sm text-[#6B7280] mt-1">Accepted Papers</div>
           </div>
-          <div class="card-dark p-6 text-center group">
+          <div class="card-dark workshop-stat-card p-6 text-center group">
             <div
               class="w-12 h-12 rounded-2xl bg-[#1E6EF1]/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-[#1E6EF1]/20 transition-colors duration-300">
               <Users class="text-[#60A5FA]" :size="24" />
@@ -249,3 +249,7 @@ useAnimation()
     <Foot />
   </template>
 </template>
+
+<style scoped>
+.workshop-stat-card { background: rgba(19, 21, 26, .45); }
+</style>
